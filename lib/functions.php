@@ -3,7 +3,6 @@
 function ShowOneRSS($url) { 	
     global $rss; 
     if ($rs = $rss->get($url)) { 
-			echo "<div class='wrapper'>";
 			$count = 0;
             foreach ($rs['items'] as $item) { 
 				if ($count == 0) {
@@ -20,7 +19,6 @@ function ShowOneRSS($url) {
             } 
 
             if ($rs['items_count'] <= 0) { echo "<li>Sorry, no items found in the RSS file :-(</li>"; } 
-			echo '</div>';
     } 
     else { 
         echo "Sorry: It's not possible to reach RSS file $url\n<br />"; 

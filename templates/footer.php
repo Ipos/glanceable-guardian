@@ -5,7 +5,17 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
+	$('#sections-panel a').click(function () { 
+		$('#news-panel').children().each(function (i) {
+			$(this).hide();
+		});
+		var x = $(this)[0].href.split('#');
+		$('#'+x[1]).show();
+		console.log(x[1]);
+
 		
+		event.preventDefault(); 
+	});
 });
 </script>
 </body>

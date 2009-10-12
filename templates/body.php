@@ -15,19 +15,21 @@
 	<div id="sections-panel">
 		<ul>
 		<?php foreach ($toplevel as $section => $feedurl):?>
-			<li class="<?=strtolower($section)?>"><a href="#<?=strtolower($section)?>"><?=$section?></li>
+			<li class="<?=strtolower($section)?>"><a href="#<?=strtolower($section)?>"><?=$section?></a></li>
 		<?php endforeach;?>
 		</ul>
 	</div>
 
-	<div id="news-panel">
+	<div id="news-panel">	
 	<?php foreach ($toplevel as $section => $feedurl):?>
 	<div id="<?=strtolower($section)?>">
 	<h2><?=$section;?></h2>
 		<ul>
 	<?php ShowOneRSS($feedurl); ?>
 		</ul>
+		</div>	
 	<?php endforeach;?>
+
 	
 </div>
 
