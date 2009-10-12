@@ -15,17 +15,18 @@
 	<div id="sections-panel">
 		<ul>
 		<?php foreach ($toplevel as $section => $feedurl):?>
-			<li class="<?=strtolower($section)?>"><a href="#<?=strtolower($section)?>"><?=$section?></a></li>
+			<li class="<?=slugit($section)?>"><a href="#<?=slugit($section)?>"><?=$section?></a></li>
 		<?php endforeach;?>
+		<li><a href="http://www.guardian.co.uk/news/gallery/2009/oct/11/1">Today in Pictures</a></li>
 		</ul>
 	</div>
 
 	<div id="news-panel">	
 	<?php foreach ($toplevel as $section => $feedurl):?>
-	<div id="<?=strtolower($section)?>">
+	<div id="<?=slugit($section)?>">
 	<h2><?=$section;?></h2>
 		<ul>
-	<?php ShowOneRSS($feedurl); ?>
+			<?php ShowOneRSS($feedurl); ?>
 		</ul>
 		</div>	
 	<?php endforeach;?>

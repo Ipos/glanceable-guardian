@@ -7,13 +7,25 @@ function ShowOneRSS($url) {
             foreach ($rs['items'] as $item) { 
 				if ($count == 0) {
 					echo '<li class="first">';
+	                echo "\t<a href=\"$item[link]\">$item[title]</a>";
+					echo "<p>".trundicate(strip_tags($item['description']), 160)."&hellip;</p>";
+					
 				} else if ($count < 3) {
 					echo '<li class="bigger">';
+					echo "\t<a href=\"$item[link]\">$item[title]</a>";
+					echo "<p>".trundicate(strip_tags($item['description']), 140)."&hellip;</p>";
+	                
+				} else if ($count > 11) {
+					echo '<li class="hidden">';
+	                echo "\t<a href=\"$item[link]\">$item[title]</a>";					
+					echo "<p>".trundicate(strip_tags($item['description']))."&hellip;</p>";
+					
 				} else {
 					echo '<li class="normal">';	
+	                echo "\t<a href=\"$item[link]\">$item[title]</a>";					
+					echo "<p>".trundicate(strip_tags($item['description']))."&hellip;</p>";
+					
 				}
-                echo "\t<a href=\"$item[link]\">$item[title]</a>";
-								
 				echo "</li>\n"; 
 				$count++;	
             } 
@@ -25,3 +37,15 @@ function ShowOneRSS($url) {
         // you will probably hide this message in a live version 
     } 
 } 
+
+// turns string into a HTML/CSS slug for referencing other stuff
+function slugit($slug) {
+	$badness = array('&amp;',' ');
+    $slug =	trim(str_replace($badness,'-',$slug));
+	$slug = strtolower($slug);
+	return $slug;
+}
+
+function trundicate($what, $limit = 100) {
+	return substr($what, 0, $limit);
+}

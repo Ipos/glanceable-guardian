@@ -192,9 +192,8 @@ class lastRSS {
 						$temp = $this->my_preg_match("'<$itemtag.*?>(.*?)</$itemtag>'si", $rss_item);
 						if ($temp != '') $result['items'][$i][$itemtag] = $temp; // Set only if not empty
 					}
-					// Strip HTML tags and other bullshit from DESCRIPTION
-					if ($this->stripHTML && $result['items'][$i]['description'])
-					 	$result['items'][$i]['description'] = $result['items'][$i]['description'];						
+
+					$result['items'][$i]['description'] = html_entity_decode($result['items'][$i]['description']);						
 
 					// Strip HTML tags and other bullshit from TITLE
 					if ($this->stripHTML && $result['items'][$i]['title'])

@@ -6,13 +6,16 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	$('#sections-panel a').click(function () { 
+		$('#sections-panel ul').children().each(function (i) {
+			$(this).removeClass('active');
+		});
+		
 		$('#news-panel').children().each(function (i) {
 			$(this).hide();
 		});
 		var x = $(this)[0].href.split('#');
-		$('#'+x[1]).show();
-		console.log(x[1]);
-
+		$('#sections-panel .'+x[1]).addClass('active');
+		$('#'+x[1]).show('fast');
 		
 		event.preventDefault(); 
 	});

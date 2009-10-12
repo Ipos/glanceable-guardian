@@ -13,3 +13,7 @@ $toplevel = array (
 	'TV and Radio' => 'http://www.guardian.co.uk/tv-and-radio/rss'
 );
 
+$news_zones = array (
+	'UK' => 'http://feeds.guardian.co.uk/theguardian/uk/rss'
+);
+

@@ -1,16 +1,31 @@
+/* Basics */
+
 * {
 	margin: 0;
 	padding: 0;
-	font-family: Georgia;
+	font-family: Palatino, Georgia;
+	font-size: 14px;
 }
 
-#news-panel {
-	width: 960px;
-	height: 1000px;
+h2 {
+	font-size: 40px;
+	margin-bottom: 0.3em;
+	margin-top: 0.5em;
+	font-family: Palatino, Georgia;
+	font-weight: normal;
 }
 
 ul {
 	list-style-type: none;
+}
+
+
+/* Main List Panel */
+
+#news-panel {
+	float: left;
+	width: 800px;
+	margin-left: 150px;
 }
 
 #news-panel div {
@@ -30,7 +45,7 @@ ul {
 }
 
 #news-panel ul {
-	border-left: 1px solid #ddd;
+	border-left: 1px solid black;
 	overflow: auto;
 }
 
@@ -39,7 +54,7 @@ ul {
 	float: left;
 	overflow: hidden;
 	padding: 10px;
-	border-right: 1px solid #ddd;
+	border-right: 1px solid black;
 }
 
 #news-panel ul li a {
@@ -47,30 +62,187 @@ ul {
 }
 
 #news-panel ul li.first {
-	border-top:  1px solid #ddd;
+	border-top: 3px solid black;
+	border-bottom: 3px solid black;
 	width: 325px;
-	height: 100px;
+	height: 150px;
+	color: white;
+		background: black;
 }
 
 #news-panel ul li.first a {
-	font-size: 22px;
+	font-size: 28px;
+	color: white;
 }
 
 #news-panel ul li.bigger {
-	border-top: 1px solid #ddd;
+	border-top: 3px solid black;
+	border-bottom: 3px solid black;
 	width: 175px;
-	height: 100px;	
+	height: 150px;	
+
 }
 
 #news-panel ul li.bigger a {
-	font-size: 18px;
+	font-size: 20px;	
+}
+
+#news-panel ul li.hidden {
+	display: none;
 }
 
 #news-panel ul li {
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px dotted #ddd;
 	width: 225px;
 	height: 100px;
 }
+
+#news-panel ul li a {
+	display: block;
+	margin-bottom: 0.5em;
+	color: black;
+	font-size: 15.5px;
+}
+
+/* Sidebar */
+#news-panel #culture ul li.first:hover p{
+	color: white;
+}
+
+#news-panel #culture ul,	
+#news-panel #culture ul li,
+#news-panel #culture ul li.bigger {
+	border-color: #A7006F;
+}
+
+#news-panel #culture ul li a {
+	color: #D1008B
+}
+
+#news-panel #culture ul li.first a {
+	color: white
+}
+	
+#news-panel #culture ul li.first {
+	background: #A7006F;
+	color: white;
+	border-color: #A7006F;
+}
+
+#news-panel #culture ul li.first:hover a {
+	color: #FDC2E2;
+}
+
+#news-panel #culture ul li.first:hover {
+	background: #7D0053;
+	color: white;
+	}
+	
+#news-panel #culture ul li.bigger:hover {
+	background:#DD9DDC;
+	}
+
+#news-panel #culture ul li:hover a{
+	color: #7D0053;
+}
+
+#news-panel #culture ul li:hover {
+	background: #FDC2E2;
+}
+	
+#news-panel #culture ul li:hover p{
+	color: #7D0053;
+}
+
+#news-panel #culture ul li:hover {
+	color: white;
+}
+
+#culture #news-panel ul li a{
+	color: white;
+}
+
+/*end of culture
+*/
+
+#news-panel #sport ul li.first:hover p{
+	color: white;
+}
+
+#news-panel #sport ul,	
+#news-panel #sport ul li,
+#news-panel #sport ul li.bigger {
+	border-color: #3a7d00;
+}
+
+#news-panel #sport ul li a {
+	color: #3A7D00
+}
+
+#news-panel #sport ul li.first a {
+	color: white
+}
+	
+#news-panel #sport ul li.first {
+	background: #3a7d00;
+	color: white;
+	border-color: #3a7d00;
+}
+
+#news-panel #sport ul li.first:hover a {
+	color: #9FE9C3;
+}
+
+#news-panel #sport ul li.first:hover {
+	background: #0d3d00;
+	color: white;
+	}
+	
+#news-panel #sport ul li.bigger:hover {
+	background:#5cad5c;
+}
+	
+#news-panel #sport ul li.bigger:hover a {
+	color: white;
+}
+
+#news-panel #sport ul li.bigger:hover p {
+	color: white;
+}
+
+#news-panel #sport ul li:hover a{
+	color: #0d3d00;
+}
+
+#news-panel #sport ul li:hover {
+	background: #9FE9C3;
+}
+	
+#news-panel #sport ul li:hover p{
+	color: #0d3d00;
+}
+
+#news-panel #sport ul li:hover {
+	color: white;
+}
+
+#sport #news-panel ul li a{
+	color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #sections-panel {
 	width: 150px;
@@ -82,11 +254,20 @@ ul {
 	background: red;
 }
 
-#news-panel {
-	float: left;
-	width: 800px;
-	margin-left: 150px;
+#sections-panel ul li {
+	width: 100px;
+	border-bottom: 1px solid #ddd;
+	margin: 3px 0;
 }
+
+#sections-panel ul li a {
+	text-decoration: none;
+}
+
+#sections-panel li.active a {
+	background: red;
+}
+
 
 /* Section Colours */
 
@@ -113,7 +294,7 @@ ul {
 	color: #8F1AB6;
 }
 
-#life-style h2 {
+#life-and-style h2 {
 	color: #AD532F;
 }
 
