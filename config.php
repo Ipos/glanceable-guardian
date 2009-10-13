@@ -1,5 +1,11 @@
 <?php
 
+// Set cache dir and cache time limit (5 seconds), (don't forget to chmod cahce dir to 777 to allow writing) 
+$rss->cache_dir = './cache'; 
+$rss->cache_time = 1200;
+$rss->stripHTML = true;
+$rss->items_limit = 15;
+
 $toplevel = array (
 	'Home' => 'http://feeds.guardian.co.uk/theguardian/rss',
 	'Sport' => 'http://feeds.guardian.co.uk/theguardian/sport/rss',	

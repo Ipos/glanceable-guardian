@@ -25,7 +25,7 @@ ul {
 #news-panel {
 	float: left;
 	width: 800px;
-	margin-left: 150px;
+	margin-left: 120px;
 }
 
 #news-panel div {
@@ -105,6 +105,49 @@ ul {
 }
 
 /* Sidebar */
+
+
+
+#sections-panel {
+	width: 110px;
+	float: left;
+	position: fixed;
+	margin-top: 76px;
+	padding-left: 10px;
+}
+
+#sections-panel a:active {
+	color: black;
+}
+
+#sections-panel ul li {
+	width: 110px;
+	border-bottom: 1px solid #ddd;
+	margin: 0;
+	padding: 0;
+}
+
+#sections-panel ul li a {
+	text-decoration: none;
+	display: block;
+	width: 120px;	
+	margin: 3px 0;	
+	margin: 0;
+	padding: 5px 0;	
+	padding-left: 5px;
+}
+
+#sections-panel li.active a {
+	background: url('images/signpost.png') -74px 0px no-repeat;
+	width: 120px;
+	z-index: 99;
+	position: relative;
+	color: white;
+}
+
+
+/* @group Culture Colors */
+
 #news-panel #culture ul li.first:hover p{
 	color: white;
 }
@@ -136,11 +179,11 @@ ul {
 #news-panel #culture ul li.first:hover {
 	background: #7D0053;
 	color: white;
-	}
+}
 	
 #news-panel #culture ul li.bigger:hover {
 	background:#DD9DDC;
-	}
+}
 
 #news-panel #culture ul li:hover a{
 	color: #7D0053;
@@ -158,12 +201,7 @@ ul {
 	color: white;
 }
 
-#culture #news-panel ul li a{
-	color: white;
-}
-
-/*end of culture
-*/
+/* @group Sport Colors */
 
 #news-panel #sport ul li.first:hover p{
 	color: white;
@@ -188,6 +226,11 @@ ul {
 	color: white;
 	border-color: #3a7d00;
 }
+
+#sections-panel li.sport.active a {
+
+}
+
 
 #news-panel #sport ul li.first:hover a {
 	color: #9FE9C3;
@@ -226,47 +269,6 @@ ul {
 	color: white;
 }
 
-#sport #news-panel ul li a{
-	color: white;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#sections-panel {
-	width: 150px;
-	float: left;
-	position: fixed;
-}
-
-#sections-panel a:active {
-	background: red;
-}
-
-#sections-panel ul li {
-	width: 100px;
-	border-bottom: 1px solid #ddd;
-	margin: 3px 0;
-}
-
-#sections-panel ul li a {
-	text-decoration: none;
-}
-
-#sections-panel li.active a {
-	background: red;
-}
 
 
 /* Section Colours */

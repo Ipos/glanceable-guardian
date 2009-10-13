@@ -1,19 +1,11 @@
 <?php 
 	// Report simple running errors
 	error_reporting(E_ERROR | E_WARNING | E_PARSE);
-
-
-	include('config.php');
-	include('./lib/lastRSS.php');
-	include('./lib/functions.php');
 	
+	include('./lib/lastRSS.php');
+	include('./lib/functions.php');	
 	$rss = new lastRSS; 
 
-	// Set cache dir and cache time limit (5 seconds), (don't forget to chmod cahce dir to 777 to allow writing) 
-	$rss->cache_dir = './cache'; 
-	$rss->cache_time = 12000;
-	$rss->stripHTML = true;
-	$rss->items_limit = 15;
-	
-	
+	include('config.php');
+
 	include('./templates/body.php');

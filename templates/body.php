@@ -17,7 +17,7 @@
 		<?php foreach ($toplevel as $section => $feedurl):?>
 			<li class="<?=slugit($section)?>"><a href="#<?=slugit($section)?>"><?=$section?></a></li>
 		<?php endforeach;?>
-		<li><a href="http://www.guardian.co.uk/news/gallery/2009/oct/11/1">Today in Pictures</a></li>
+		<li><a href="http://www.guardian.co.uk/news/gallery/2009/oct/11/1">In Pictures</a></li>
 		</ul>
 	</div>
 
