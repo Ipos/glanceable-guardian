@@ -7,22 +7,22 @@ function ShowOneRSS($url) {
             foreach ($rs['items'] as $item) { 
 				if ($count == 0) {
 					echo '<li class="first">';
-	                echo "\t<a href=\"$item[link]\">$item[title]</a>";
+					echo "\t<a href=\"$item[link]\">".widont($item[title])."</a>";
 					echo "<p>".trundicate(strip_tags($item['description']), 160)."&hellip;</p>";
 					
 				} else if ($count < 3) {
 					echo '<li class="bigger">';
-					echo "\t<a href=\"$item[link]\">$item[title]</a>";
+					echo "\t<a href=\"$item[link]\">".widont($item[title])."</a>";
 					echo "<p>".trundicate(strip_tags($item['description']), 140)."&hellip;</p>";
 	                
 				} else if ($count > 11) {
 					echo '<li class="hidden">';
-	                echo "\t<a href=\"$item[link]\">$item[title]</a>";					
+					echo "\t<a href=\"$item[link]\">".widont($item[title])."</a>";
 					echo "<p>".trundicate(strip_tags($item['description']))."&hellip;</p>";
 					
 				} else {
 					echo '<li class="normal">';	
-	                echo "\t<a href=\"$item[link]\">$item[title]</a>";					
+					echo "\t<a href=\"$item[link]\">".widont($item[title])."</a>";
 					echo "<p>".trundicate(strip_tags($item['description']))."&hellip;</p>";
 					
 				}
@@ -48,4 +48,15 @@ function slugit($slug) {
 
 function trundicate($what, $limit = 100) {
 	return substr($what, 0, $limit);
+}
+
+function widont($str = '')
+{
+	$str = rtrim($str);
+	$space = strrpos($str, ' ');
+	if ($space !== false)
+	{
+		$str = substr($str, 0, $space).'&nbsp;'.substr($str, $space + 1);
+	}
+	return $str;
 }
