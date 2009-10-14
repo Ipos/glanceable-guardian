@@ -5,6 +5,7 @@
 	padding: 0;
 	font-family: Palatino, Georgia;
 	font-size: 14px;
+	overflow: hidden;
 }
 
 h2 {
@@ -13,6 +14,10 @@ h2 {
 	margin-top: 0.5em;
 	font-family: Palatino, Georgia;
 	font-weight: normal;
+}
+
+iframe {
+	border: none;
 }
 
 ul {
@@ -145,6 +150,28 @@ ul {
 	color: white;
 }
 
+/* Reader Panel */
+
+#reader {
+	position: absolute;
+	top: 0;
+	left: 120px;
+	display: none;
+}
+
+/* Back Panel */
+
+#back-panel {
+	background: black;
+	width: 120px;
+	height: 500px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	color: white;
+	display: none;
+}
 
 /* @group Culture Colors */
 

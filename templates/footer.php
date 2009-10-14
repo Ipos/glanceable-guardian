@@ -1,3 +1,4 @@
+<iframe id="reader" width="1000px" height="800px" border="0" frameborder="0"></iframe>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
 <script src="templates/js/jquery.localscroll-1.2.6-min.js" type="text/javascript" charset="utf-8"></script>
 <script src="templates/js/jquery.scrollTo-1.4.0-min.js" type="text/javascript" charset="utf-8"></script>
@@ -18,7 +19,26 @@ $(document).ready(function() {
 		$('#'+x[1]).show('fast');
 		
 		event.preventDefault(); 
+		
 	});
+	
+	// show viewing panel
+	$('#news-panel ul li a').click(function (){
+		var url = $(this).attr('href') + '/print';
+		$('iframe').attr("src",url);  
+		$('#reader').show();
+		$('#back-panel').show();
+		console.log(url);
+		
+		return false
+	});
+	
+	$('#back-panel').click(function () {
+		$(this).hide();
+		$('#reader').attr("src",'about:blank');  
+		
+		$('#reader').hide();
+	})
 });
 </script>
 </body>
