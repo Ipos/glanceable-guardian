@@ -1,0 +1,57 @@
+8
+
+dir
+2
+http://openplatform-php.googlecode.com/svn/trunk
+http://openplatform-php.googlecode.com/svn
+
+
+
+2009-03-09T22:09:35.845741Z
+2
+openplatform@guardian.co.uk
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+5be16842-0cbd-11de-a021-8b77bb4f2096
+
+test.php
+file
+
+
+
+
+2009-10-14T19:27:16.000000Z
+c1feab5a8efa72d155afd7d1191011cb
+2009-03-09T22:09:35.845741Z
+2
+openplatform@guardian.co.uk
+has-props
+
+content
+dir
+
+conf.php
+file
+
+
+
+
+2009-10-14T19:27:16.000000Z
+b9ca1c066bf56a70fe6262f76e019627
+2009-03-09T22:09:35.845741Z
+2
+openplatform@guardian.co.uk
+has-props
+
