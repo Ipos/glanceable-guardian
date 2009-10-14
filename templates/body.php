@@ -11,7 +11,14 @@
 </head>
 
 <body>
-	
+
+	<div id="toolbar">
+		<a href="#">Read Later</a>
+	</div>
+	<div id="sidebar">
+		
+	</div>
+		
 	<div id="sections-panel">
 		<ul>
 		<?php foreach ($toplevel as $section => $feedurl):?>

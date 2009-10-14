@@ -1,3 +1,4 @@
+<iframe id="reading-panel" width="800px" height="1000px"></iframe>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
 <script src="templates/js/jquery.localscroll-1.2.6-min.js" type="text/javascript" charset="utf-8"></script>
 <script src="templates/js/jquery.scrollTo-1.4.0-min.js" type="text/javascript" charset="utf-8"></script>
@@ -19,6 +20,20 @@ $(document).ready(function() {
 		
 		event.preventDefault(); 
 	});
+	
+	$('#news-panel ul li a').click(function(){
+		var url = $(this).attr('href') + '/print';
+		$('#reading-panel').attr('src', url);
+		$('#reading-panel').show();
+		$('#toolbar').show();		
+		$('#sidebar').show();				
+		
+		event.preventDefault();
+	});
+	
+
+	
+	
 });
 </script>
 </body>

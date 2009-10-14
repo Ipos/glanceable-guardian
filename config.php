@@ -1,10 +1,16 @@
 <?php
 
-// Set cache dir and cache time limit (5 seconds), (don't forget to chmod cahce dir to 777 to allow writing) 
+// Set cache dir and cache time limit
 $rss->cache_dir = './cache'; 
 $rss->cache_time = 1200;
 $rss->stripHTML = true;
 $rss->items_limit = 15;
+
+// Guardian API
+define("GUARDIANAPI_KEY", "");
+define("GUARDIANAPI_URL", "http://api.guardianapis.com/content/");
+define("GUARDIANAPI_DEBUG", true);
+
 
 $toplevel = array (
 	'Home' => 'http://feeds.guardian.co.uk/theguardian/rss',
