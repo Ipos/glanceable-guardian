@@ -4,9 +4,18 @@
 	so we must parse each url and grab the url from the email to a friend link
 */
 
+
+// parsing bit
+
+
+
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
-$url = 'http://www.guardian.co.uk/politics/2009/oct/14/gordon-brown-davidcameron';
+$url = $_SERVER['QUERY_STRING'];
+
+if (!$url) {
+	die('Bye');
+}
 
 $dom = new domDocument;
 @$dom->loadHTML(file_get_contents($url));
@@ -14,9 +23,50 @@ $dom->preserveWhiteSpace = false;
 $xpath = new DOMXpath($dom);
 // need to find all links with the classname .sendlink
 $links = $xpath->query("//a[span/text()='Send to a friend']/@href");
-$ret = array();
+
+// eliminate this foreach array rubbish
+$content_id = array();
 
 foreach ($links as $tag) {
-	var_dump($tag->nodeValue);
+	$value = split('/', $tag->childNodes->item(0)->nodeValue);
+	$content_id[] = $value[4];
 }
-print_r($ret);
+
+
+echo $content_id[0];
+
+
+
+
+// caching bit
+// http://devzone.zend.com/article/760
+
+
+// create new database (OO interface) 
+$db = new SQLiteDatabase("./cache/article-lookup.sqlite"); 
+// $db->query("
+// 	CREATE TABLE cache(id INTEGER PRIMARY KEY, url CHAR(500), content_id INTEGER); 
+// ");
+
+// create table foo and insert sample data 
+
+$db->query("BEGIN; 
+        INSERT INTO cache (url, content_id) VALUES('$url', $content_id[0]); 
+        COMMIT;"); 
+
+// execute a query     
+$result = $db->query("SELECT * FROM cache"); 
+// iterate through the retrieved rows 
+while ($result->valid()) { 
+    // fetch current row 
+    $row = $result->current();      
+    print_r($row); 
+	// echo $row['content_id'];
+// proceed to next row 
+    $result->next(); 
+} 
+
+// not generally needed as PHP will destroy the connection 
+unset($db); 
+
+?>
