@@ -13,9 +13,10 @@ $dom = new domDocument;
 $dom->preserveWhiteSpace = false;
 $xpath = new DOMXpath($dom);
 // need to find all links with the classname .sendlink
-$links = $xpath->query("//div[contains(concat(' ',normalize-space(@class),' '),' sendlink ')]");
+$links = $xpath->query("//a[span/text()='Send to a friend']/@href");
 $ret = array();
+
 foreach ($links as $tag) {
-$ret[$tag->getAttribute('href')] = $tag->childNodes->item(0)->nodeValue;
+	var_dump($tag->nodeValue);
 }
 print_r($ret);
