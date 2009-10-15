@@ -4,24 +4,30 @@ function ShowOneRSS($url) {
     global $rss; 
     if ($rs = $rss->get($url)) { 
 			$count = 0;
+
             foreach ($rs['items'] as $item) { 
+				// 12 letters per line
 				if ($count == 0) {
 					echo '<li class="first">';
 					echo "\t<a href=\"$item[link]\">".widont($item[title])."</a>";
-					echo "<p>".trundicate(strip_tags($item['description']), 160)."&hellip;</p>";
+					echo "<p>".trundicate(strip_tags($item['description']), 160)."&hellip;</p>";					
+					
+					strlen($item[link]);
 					
 				} else if ($count < 3) {
+				// 9 letters per line
 					echo '<li class="bigger">';
 					echo "\t<a href=\"$item[link]\">".widont($item[title])."</a>";
 					echo "<p>".trundicate(strip_tags($item['description']), 140)."&hellip;</p>";
 	                
 				} else if ($count > 11) {
-					echo '<li class="hidden">';
+					echo '<li class="hidden">';					
 					echo "\t<a href=\"$item[link]\">".widont($item[title])."</a>";
-					echo "<p>".trundicate(strip_tags($item['description']))."&hellip;</p>";
+					echo "<p>".trundicate(strip_tags($item['description']))."&hellip;</p>";					
 					
 				} else {
-					echo '<li class="normal">';	
+					// 12 letters per line
+					echo '<li class="normal">';
 					echo "\t<a href=\"$item[link]\">".widont($item[title])."</a>";
 					echo "<p>".trundicate(strip_tags($item['description']))."&hellip;</p>";
 					
