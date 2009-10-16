@@ -3,15 +3,26 @@
 	Annoyingly there's no way to get the correct item ID from the urls in the rss feed, 
 	so we must parse each url and grab the url from the email to a friend link
 */
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 
 // parsing bit
-
-
-
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
-
 $url = $_SERVER['QUERY_STRING'];
+
+
+
+// check if exists in cache
+$db = new SQLiteDatabase("./cache/article-lookup.sqlite"); 
+$know_id = $db->query("
+	SELECT content_id FROM cache WHERE url = '$url'
+");
+
+while ($know_id->valid()) { 
+    // fetch current row 
+    $content_id = $know_id->current();      
+	
+}
+
 
 if (!$url) {
 	die('Bye');
