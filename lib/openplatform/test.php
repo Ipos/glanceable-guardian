@@ -22,24 +22,24 @@ echo 'a'.$item->headline;
 
 
 
-$search->get_results();
-
-echo "Got " .
-	(count($search->get_items()) == $search->get_total() ? "all " . $search->get_total() . " items" : count($search->get_items()) .
-	" items from the total of " . $search->get_total() . 
-	", starting from " . ($search->get_start_index() + 1) . ",") .
-	" which should be cached for the next " . $search->get_maximum_age() . " seconds<br />";
-
-
-foreach ($search->get_items() as $item) {
-	$memcache->set("GuardianAPI-item-" . $item->get_id(), $item, FALSE, $search->get_maximum_age());  // store the item in the memcache, using its ID as part of the key, and setting the cache appropriately
-	if (GUARDIANAPI_DEBUG) var_dump($memcache->get("GuardianAPI-item-" . $item->get_id()));
-	$last_item_id = $item->get_id();
-}
-
-$last_item = new GuardianAPI_item($last_item_id);
-
-echo "<br />The last item cached was this: ";
-var_dump($last_item);
+// $search->get_results();
+// 
+// echo "Got " .
+// 	(count($search->get_items()) == $search->get_total() ? "all " . $search->get_total() . " items" : count($search->get_items()) .
+// 	" items from the total of " . $search->get_total() . 
+// 	", starting from " . ($search->get_start_index() + 1) . ",") .
+// 	" which should be cached for the next " . $search->get_maximum_age() . " seconds<br />";
+// 
+// 
+// foreach ($search->get_items() as $item) {
+// 	$memcache->set("GuardianAPI-item-" . $item->get_id(), $item, FALSE, $search->get_maximum_age());  // store the item in the memcache, using its ID as part of the key, and setting the cache appropriately
+// 	if (GUARDIANAPI_DEBUG) var_dump($memcache->get("GuardianAPI-item-" . $item->get_id()));
+// 	$last_item_id = $item->get_id();
+// }
+// 
+// $last_item = new GuardianAPI_item($last_item_id);
+// 
+// echo "<br />The last item cached was this: ";
+// var_dump($last_item);
 
 ?>

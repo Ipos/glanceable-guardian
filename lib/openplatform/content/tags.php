@@ -5,7 +5,7 @@
  * V1.0 10/03/2009
  */
 
-require_once("content/tag.php");
+//require_once("content/tag.php");
 
 class GuardianAPI_tags {
 	public function __construct($query = "") {

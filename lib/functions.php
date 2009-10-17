@@ -78,32 +78,6 @@ function get_content_id($url) {
 	$db = new SQLiteDatabase("./cache/article-lookup.sqlite"); 
 	$parser_debug = false;
 
-	// parsing bit
-
-	/*
-		debug and show all the rows
-	*/
-	if ($url == 'debug') {
-
-		$result = $db->query("SELECT * FROM cache"); 
-
-		while ($result->valid()) { 
-		    // fetch current row 
-		    $row = $result->current();      
-		    print_r($row); 
-		    $result->next(); 
-		} 
-		die('all rows');
-
-	} else if ($url == 'create') {
-		$db->query("
-			CREATE TABLE cache(id INTEGER PRIMARY KEY, url CHAR(500), content_id INTEGER); 
-		");
-		die('new cache db created');	
-	} else if (!$url) {
-		die('no url given');
-	}
-
 
 	// check if exists in cache
 	$known_id = $db->arrayQuery("SELECT content_id FROM cache WHERE url = '$url'", SQLITE_ASSOC); 
@@ -158,4 +132,28 @@ function get_content_id($url) {
 	
 }
 
+
+function show_contentid_cache() {
+	$db = new SQLiteDatabase("./cache/article-lookup.sqlite"); 
+	
+
+	$result = $db->query("SELECT * FROM cache"); 
+
+	while ($result->valid()) { 
+	    // fetch current row 
+	    $row = $result->current();      
+	    print_r($row); 
+	    $result->next(); 
+	} 
+} 
+
+function created_contentid_cache() {
+	$db = new SQLiteDatabase("./cache/article-lookup.sqlite"); 
+
+	$db->query("
+		CREATE TABLE cache(id INTEGER PRIMARY KEY, url CHAR(500), content_id INTEGER); 
+	");
+	die('new cache db created');	
+
+}
 

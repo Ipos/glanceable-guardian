@@ -5,7 +5,7 @@
  * V1.0 10/03/2009
  */
 
-require_once("content/item.php");
+//require_once("content/item.php");
 
 class GuardianAPI_search {
 	public function __construct($query = "") {
