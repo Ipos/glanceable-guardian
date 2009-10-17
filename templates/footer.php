@@ -1,8 +1,5 @@
-<iframe id="reading-panel" width="800px" height="1000px"></iframe>
+<div id="reading-panel" width="800px" height="1000px"></div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
-<script src="templates/js/jquery.localscroll-1.2.6-min.js" type="text/javascript" charset="utf-8"></script>
-<script src="templates/js/jquery.scrollTo-1.4.0-min.js" type="text/javascript" charset="utf-8"></script>
-
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -24,17 +21,17 @@ $(document).ready(function() {
 	
 	$('#back-panel').click(function () {
 		$(this).hide();
-		$('#reader').attr("src",'about:blank');  
 		
-		$('#reader').hide();
+		$('#reading-panel, #sidebar, #toolbar').hide();
 	})
 
 	$('#news-panel ul li a').click(function(){
 		var url = $(this).attr('href') + '/print';
-		$('#reading-panel').attr('src', url);
+		
+		$("#reading-panel").load(url);		
 		$('#reading-panel').show();
-		$('#toolbar').show();		
-		$('#sidebar').show();				
+		$('#toolbar, #back-panel').show();		
+
 		
 		event.preventDefault();
 	});

@@ -15,9 +15,6 @@
 	<div id="toolbar">
 		<a href="#">Read Later</a>
 	</div>
-	<div id="sidebar">
-		
-	</div>
 		
 	<div id="sections-panel">
 		<ul>
@@ -27,6 +24,7 @@
 		<li><a href="http://www.guardian.co.uk/news/gallery/2009/oct/11/1">In Pictures</a></li>
 		</ul>
 	</div>
+
 	<div id="back-panel">
 		Hello
 	</div>
