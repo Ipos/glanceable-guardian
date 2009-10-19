@@ -13,7 +13,7 @@ define("GUARDIANAPI_DEBUG", true);
 
 
 $toplevel = array (
-	'Home' => 'http://feeds.guardian.co.uk/theguardian/rss',
+	'News' => 'http://feeds.guardian.co.uk/theguardian/rss',
 	'Sport' => 'http://feeds.guardian.co.uk/theguardian/sport/rss',	
 	'Comment' => 'http://feeds.guardian.co.uk/theguardian/commentisfree/rss',	
 	'Culture' => 'http://feeds.guardian.co.uk/theguardian/culture/rss',
@@ -26,6 +26,13 @@ $toplevel = array (
 );
 
 $news_zones = array (
-	'UK' => 'http://feeds.guardian.co.uk/theguardian/uk/rss'
+	'UK' => 'http://feeds.guardian.co.uk/theguardian/uk/rss',
+	'World' => 'http://feeds.guardian.co.uk/theguardian/world/rss',	
+	'Politics' => 'http://feeds.guardian.co.uk/theguardian/politics/rss',			
+	'Media' => 'http://feeds.guardian.co.uk/theguardian/media/rss',				
+	'Education' => 'http://feeds.guardian.co.uk/theguardian/education/rss',		
+	'Society' => 'http://feeds.guardian.co.uk/theguardian/society/rss',				
+	'Science' => 'http://feeds.guardian.co.uk/science/rss',
+	'Technology' => 'http://feeds.guardian.co.uk/theguardian/technology/rss'
 );
 
