@@ -53,12 +53,12 @@ class lastRSS {
 	// -------------------------------------------------------------------
 	// Parse RSS file and returns associative array.
 	// -------------------------------------------------------------------
-	function Get ($rss_url) {
+	function Get ($rss_url, $new) {
 		// If CACHE ENABLED
 		if ($this->cache_dir != '') {
 			$cache_file = $this->cache_dir . '/rsscache_' . md5($rss_url);
 			$timedif = @(time() - filemtime($cache_file));
-			if ($timedif < $this->cache_time) {
+			if ($new == false ) {
 				// cached file is fresh enough, return cached array
 				$result = unserialize(join('', file($cache_file)));
 				// set 'cached' to 1 only if cached file is correct

@@ -19,7 +19,15 @@
 	<div id="sections-panel">
 		<ul>
 		<?php foreach ($toplevel as $section => $feedurl):?>
-			<li class="<?=slugit($section)?>"><a href="#<?=slugit($section)?>"><?=$section?></a></li>
+			<li class="<?=slugit($section)?>"><a href="#<?=slugit($section)?>"><?=$section?></a>
+			<?php if ($section == 'News'):?>
+				<ul>
+					<?php foreach ($news_zones as $zone => $feedurl):?>
+					<li class="<?=slugit($zone)?>"><a href="#<?=slugit($zone)?>"><?=$zone?></a></li>
+					<?php endforeach;?>
+				</ul>
+			<?php endif;?>
+			</li>
 		<?php endforeach;?>
 		<li><a href="http://www.guardian.co.uk/news/gallery/2009/oct/11/1">In Pictures</a></li>
 		</ul>
@@ -30,6 +38,15 @@
 	</div>
 
 	<div id="news-panel">	
+	<?php foreach ($news_zones as $zone => $feedurl):?>
+	<div id="<?=slugit($zone)?>">	
+	<h2><?=$zone;?></h2>		
+		<ul>
+			<?php ShowOneRSS($feedurl); ?>
+		</ul>
+		</div>	
+	<?php endforeach;?>	
+		
 	<?php foreach ($toplevel as $section => $feedurl):?>
 	<div id="<?=slugit($section)?>">
 	<h2><?=$section;?></h2>

@@ -1,8 +1,8 @@
 <?php
 
-function ShowOneRSS($url) { 	
+function ShowOneRSS($url, $new = false) { 	
     global $rss; 
-    if ($rs = $rss->get($url)) { 
+    if ($rs = $rss->get($url, $new)) { 
 			$count = 0;
 
             foreach ($rs['items'] as $item) { 
