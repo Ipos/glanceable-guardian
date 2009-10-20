@@ -74,7 +74,6 @@ function get_content_id($url) {
 		Once we've got it we shove it in an sqlite database so we don't have to go and get it again.
 
 	*/
-	error_reporting(E_ERROR | E_WARNING | E_PARSE);
 	$db = new SQLiteDatabase("./cache/article-lookup.sqlite"); 
 	$parser_debug = false;
 

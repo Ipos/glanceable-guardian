@@ -1,17 +1,23 @@
 <?php
 
+// Report simple running errors
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
+include('./lib/lastRSS.php');
+include('./lib/functions.php');	
+$rss = new lastRSS; 
 
-require_once('config.php');
-require_once('lib/functions.php');
+include('config.php');
 
 // Go and get the latest rss update, send to cache
 
 foreach ($news_zones as $zone => $feedurl):
-	ShowOneRSS($feedurl);
+	echo $zone;
+	ShowOneRSS($feedurl, true);
 endforeach;
 
 foreach ($toplevel as $section => $feedurl):
-	ShowOneRSS($feedurl);
+	echo $section;
+	ShowOneRSS($feedurl, true);
 endforeach;
 

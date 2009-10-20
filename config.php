@@ -32,7 +32,7 @@ $news_zones = array (
 	'Media' => 'http://feeds.guardian.co.uk/theguardian/media/rss',				
 	'Education' => 'http://feeds.guardian.co.uk/theguardian/education/rss',		
 	'Society' => 'http://feeds.guardian.co.uk/theguardian/society/rss',				
-	'Science' => 'http://feeds.guardian.co.uk/science/rss',
+	'Science' => 'http://www.guardian.co.uk/science/rss',
 	'Technology' => 'http://feeds.guardian.co.uk/theguardian/technology/rss'
 );
 
