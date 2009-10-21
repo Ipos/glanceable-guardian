@@ -4,6 +4,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	$('#sections-panel a').click(function () { 
+		
 		$('#sections-panel ul').children().each(function (i) {
 			$(this).removeClass('active');
 		});
@@ -11,6 +12,7 @@ $(document).ready(function() {
 		$('#news-panel').children().each(function (i) {
 			$(this).hide();
 		});
+		
 		var x = $(this)[0].href.split('#');
 		$('#sections-panel .'+x[1]).addClass('active');
 		$('#'+x[1]).show('fast');

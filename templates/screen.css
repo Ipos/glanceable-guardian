@@ -45,7 +45,9 @@ ul {
 
 #news-panel ul {
 	border-left: 1px solid black;
+	border-bottom: 1px solid black;
 	overflow: auto;
+	width: 738px;
 }
 
 #news-panel ul li {

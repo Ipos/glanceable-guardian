@@ -21,11 +21,11 @@
 		<?php foreach ($toplevel as $section => $feedurl):?>
 			<li class="<?=slugit($section)?>"><a href="#<?=slugit($section)?>"><?=$section?></a>
 			<?php if ($section == 'News'):?>
-				<ul>
-					<?php foreach ($news_zones as $zone => $feedurl):?>
-					<li class="<?=slugit($zone)?>"><a href="#<?=slugit($zone)?>"><?=$zone?></a></li>
-					<?php endforeach;?>
-				</ul>
+			
+			<?php foreach ($news_zones as $zone => $feedurl):?>
+			<li class="zone <?=slugit($zone)?>"><a href="#<?=slugit($zone)?>"><?=$zone?></a></li>
+			<?php endforeach;?>
+				
 			<?php endif;?>
 			</li>
 		<?php endforeach;?>
