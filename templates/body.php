@@ -19,7 +19,7 @@
 	<div id="sections-panel">
 		<ul>
 		<?php foreach ($toplevel as $section => $feedurl):?>
-			<li class="<?=slugit($section)?>"><a href="#<?=slugit($section)?>"><?=$section?></a>
+			<li class="<?=slugit($section)?> <?php if ($section == 'News'){?>active<?php } ?>"><a href="#<?=slugit($section)?>"><?=$section?></a>
 			<?php if ($section == 'News'):?>
 			
 			<?php foreach ($news_zones as $zone => $feedurl):?>
@@ -48,7 +48,7 @@
 	<?php endforeach;?>	
 		
 	<?php foreach ($toplevel as $section => $feedurl):?>
-	<div id="<?=slugit($section)?>">
+	<div id="<?=slugit($section)?>" <?php if ($section == 'News'){?> style="display: block"<?php } ?>>
 	<h2><?=$section;?></h2>
 		<ul>
 			<?php ShowOneRSS($feedurl); ?>
