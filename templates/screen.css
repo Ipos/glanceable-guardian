@@ -39,15 +39,22 @@ ul {
 	clear: both;
 }
 
+#news-panel .section-header {
+	background: #133589;
+	padding: 20px 15px;
+	margin: 0;
+	color: white;
+	width: 100%;
+}
+
 #news-panel div {
 	height: auto
 }
 
 #news-panel ul {
-	border-left: 1px solid black;
-	border-bottom: 1px solid black;
+	border-top: 1px solid #b7b7b7;
 	overflow: auto;
-	width: 738px;
+	width: 939px;
 }
 
 #news-panel ul li {
@@ -55,7 +62,8 @@ ul {
 	float: left;
 	overflow: hidden;
 	padding: 10px;
-	border-right: 1px solid black;
+	color: #555555;
+	border-right: 1px dotted #b7b7b7;
 }
 
 #news-panel ul li a {
@@ -63,29 +71,26 @@ ul {
 }
 
 #news-panel ul li.first {
-	border-top: 3px solid black;
-	border-bottom: 3px solid black;
-	width: 325px;
+	width: 450px;
 	height: 150px;
-	color: white;
-		background: black;
+	font-family: Georgia;
 }
 
 #news-panel ul li.first a {
 	font-size: 28px;
-	color: white;
+	color: #133589;
+	letter-spacing: -0em;
+	font-family: Palatino;
 }
 
 #news-panel ul li.bigger {
-	border-top: 3px solid black;
-	border-bottom: 3px solid black;
-	width: 175px;
+	width: 212px;
 	height: 150px;	
-
 }
 
 #news-panel ul li.bigger a {
-	font-size: 20px;	
+	font-size: 22px;
+	font-family: Palatino;
 }
 
 #news-panel ul li.hidden {
@@ -94,14 +99,14 @@ ul {
 
 #news-panel ul li {
 	border-bottom: 1px dotted #ddd;
-	width: 225px;
+	width: 291px;
 	height: 100px;
 }
 
 #news-panel ul li a {
 	display: block;
 	margin-bottom: 0.5em;
-	color: black;
+	color: #133589;
 	font-size: 15.5px;
 }
 
@@ -110,7 +115,7 @@ ul {
 
 
 #sections-panel {
-	width: 110px;
+	width: 150px;
 	float: left;
 	margin-top: 76px;
 	padding-left: 10px;
@@ -123,27 +128,34 @@ ul {
 
 #sections-panel ul li {
 	width: 110px;
-	border-bottom: 1px solid #ddd;
 	margin: 0;
 	padding: 0;
+	text-align: right;
 }
 
 #sections-panel ul li a {
 	text-decoration: none;
 	display: block;
+	color: #999;
+	font-weight: bold;
+	font-family: Palatino;
 	width: 120px;	
 	margin: 3px 0;	
 	margin: 0;
-	padding: 5px 0;	
+	padding: 3px 0;	
+	font-size: 18px;
 	padding-left: 5px;
 }
 
+#sections-panel ul li a:hover {
+	color: #555;
+}
+
 #sections-panel li.active a {
-	background: url('images/signpost.png') -74px 0px no-repeat;
 	width: 120px;
+	color: #555;	
 	z-index: 99;
 	position: relative;
-	color: white;
 }
 
 /* Reader Panel */
@@ -324,37 +336,39 @@ ul {
 
 /* Section Colours */
 
-#home h2 {
-	color:#D61D00;
+#home h2.section-header {
+	background:#D61D00;
 }
-#comment h2 {
-	color:#0061A6;
+#comment h2.section-header {
+	background:#0061A6;
 }
-#sport h2 {
-	color: #008000;
-}
-
-#tv h2,
-#culture h2 {
-	color: #D1008B;
+#sport h2.section-header.section-header {
+	background: #008000;
 }
 
-#business h2 {
-	color: #3246AB;
+#tv h2.section-header,
+#culture h2.section-header {
+	background: #D1008B;
 }
 
-#money h2 {
-	color: #8F1AB6;
+#business h2.section-header {
+	background: #3246AB;
 }
 
-#life-and-style h2 {
-	color: #AD532F;
+#money h2.section-header {
+	background: #8F1AB6;
 }
 
-#travel h2 {
-	color: #066EC9;
+#life-and-style h2.section-header {
+	background: #AD532F;
 }
 
-#environment h2 {
-	color: #4A7801;
+#travel h2.section-header {
+	background: #066EC9;
 }
+
+#environment h2.section-header {
+	background: #4A7801;
+}
+
+
