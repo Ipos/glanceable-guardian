@@ -3,6 +3,18 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
+	
+	$('#sections-panel a#pictures').click(function () { 
+
+		$('#news-panel').children().each(function (i) {
+			$(this).hide();
+		});
+
+		$('#inpictures').show();
+		
+		event.preventDefault(); 
+	});
+	
 	$('#sections-panel a').click(function () { 
 		
 		$('#sections-panel ul').children().each(function (i) {

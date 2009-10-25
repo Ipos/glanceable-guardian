@@ -1,5 +1,28 @@
 <?php
 
+function ShowRSSinPictures($url, $new = false) {
+    global $rss; 
+
+    if ($rs = $rss->get($url, $new)) { 
+			$count = 0;
+            foreach ($rs['items'] as $item) { 	
+					//if ($item[story_image] )
+					if ($item[story_image]) {
+						echo '<li class="picture" style="background: url('.$item[story_image].') top center no-repeat">';					
+						echo "\t<span><a href=\"parser.php?$item[link]\">".widont($item[title])."</a></span>";
+						echo "</li>\n"; 
+					}
+            } 
+
+            if ($rs['items_count'] <= 0) { echo "<li>Sorry, no items found in the RSS file :-(</li>"; } 
+    } 
+    else { 
+        echo "Sorry: It's not possible to reach RSS file $url\n<br />"; 
+        // you will probably hide this message in a live version 
+    }
+	
+}
+
 function ShowOneRSS($url, $new = false) { 	
     global $rss; 
     if ($rs = $rss->get($url, $new)) { 
@@ -8,7 +31,7 @@ function ShowOneRSS($url, $new = false) {
 				// 12 letters per line
 				if ($count == 0) {
 					echo '<li class="first">';
-					echo "<img src=\"$item[story_image]\" />";
+					echo "<a href=\"parser.php?$item[link]\" class=\"storyimage\"><img src=\"$item[story_image]\" /></a>";
 					echo "\t<a href=\"parser.php?$item[link]\">".widont($item[title])."</a>";
 					echo "<p>".trundicate(strip_tags($item['description']), 160)."&hellip;</p>";					
 

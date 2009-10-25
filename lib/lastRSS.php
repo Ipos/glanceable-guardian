@@ -196,7 +196,9 @@ class lastRSS {
 					
 					// Parse Guardian ima
 					$temp = $this->my_preg_match("'<media:content.* url=\".*?(.*?)\">'si", $rss_item);
-					if (strlen($temp) > 0) {
+					if ($temp == null) {
+						
+					} else {
 						$result['items'][$i]['story_image'] = $temp; // Set only if not empty	
 					} 
 					
@@ -212,6 +214,7 @@ class lastRSS {
 					}
 					// Item counter
 					$i++;
+					$temp = null;
 				}
 			}
 
