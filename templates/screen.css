@@ -253,6 +253,7 @@ ul {
 	width: 600px;
 	padding: 0em;
 	padding-left: 1em;
+	font-family: Georgia;
 }
 
 #reading-panel p  {
@@ -284,9 +285,13 @@ ul {
 	float: left;
 }
 
-
 #toolbar a {
 	color: white;
+}
+
+#toolbar a#twitter {
+	background: url(http://a1.twimg.com/a/1256331833/images/favicon.ico) left top no-repeat;
+	padding-left:20px;
 }
 
 

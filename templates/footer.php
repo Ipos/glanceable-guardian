@@ -5,9 +5,6 @@
 $(document).ready(function() {
 	
 	
-	
-
-
 	$('#news-panel ul li a').click(function(event){
 
 		var url = $(this).attr('href');
@@ -25,6 +22,9 @@ $(document).ready(function() {
 		console.log($(this).id);
 
 		if ($(this).attr('id') == 'pictures') {
+			
+			$('#reading-panel').hide();
+			
 			
 			$('#news-panel').children().each(function (i) {
 				$(this).hide();
