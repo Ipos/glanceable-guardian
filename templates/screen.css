@@ -76,6 +76,17 @@ ul {
 	font-family: Georgia;
 }
 
+#news-panel ul li.first img {
+	width: 25%;
+	float: right;
+	opacity: 0.97;
+}
+
+#news-panel ul li.first img:hover {
+	opacity: 1;
+}
+
+
 #news-panel ul li.first a {
 	font-size: 28px;
 	color: #133589;

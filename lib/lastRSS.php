@@ -179,6 +179,7 @@ class lastRSS {
 					if ($temp != '') $result['image_'.$imagetag] = $temp; // Set only if not empty
 				}
 			}
+						
 			// Parse ITEMS
 			preg_match_all("'<item(| .*?)>(.*?)</item>'si", $rss_content, $items);
 			$rss_items = $items[2];
@@ -192,7 +193,13 @@ class lastRSS {
 						$temp = $this->my_preg_match("'<$itemtag.*?>(.*?)</$itemtag>'si", $rss_item);
 						if ($temp != '') $result['items'][$i][$itemtag] = $temp; // Set only if not empty
 					}
-
+					
+					// Parse Guardian ima
+					$temp = $this->my_preg_match("'<media:content.* url=\".*?(.*?)\">'si", $rss_item);
+					if (strlen($temp) > 0) {
+						$result['items'][$i]['story_image'] = $temp; // Set only if not empty	
+					} 
+					
 					$result['items'][$i]['description'] = html_entity_decode($result['items'][$i]['description']);						
 
 					// Strip HTML tags and other bullshit from TITLE

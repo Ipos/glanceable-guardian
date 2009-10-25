@@ -4,11 +4,11 @@ function ShowOneRSS($url, $new = false) {
     global $rss; 
     if ($rs = $rss->get($url, $new)) { 
 			$count = 0;
-
-            foreach ($rs['items'] as $item) { 
+            foreach ($rs['items'] as $item) { 	
 				// 12 letters per line
 				if ($count == 0) {
 					echo '<li class="first">';
+					echo "<img src=\"$item[story_image]\" />";
 					echo "\t<a href=\"parser.php?$item[link]\">".widont($item[title])."</a>";
 					echo "<p>".trundicate(strip_tags($item['description']), 160)."&hellip;</p>";					
 
