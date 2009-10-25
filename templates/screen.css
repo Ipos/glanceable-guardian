@@ -238,26 +238,52 @@ ul {
 
 #reading-panel {
 	position: absolute;
-	left: 120px;
-	top: 30px;
-	width: 600px;
+	left: 150px;
+	top: 85px;
 	display: none;
 	z-index: 99;
 	background: white;
 	border: none;
-	padding: 1em;
+	padding-top: 0;
+	right: 0;
+	height: 620px;
+}
+
+#reading-panel .article {
+	width: 600px;
+	padding: 0em;
+	padding-left: 1em;
 }
 
 #reading-panel p  {
 	margin-bottom: 1em;
 }
 
-#toolbar {
-	background: black;
-	height: 30px;
-	padding-left: 125px;
-	display: none;
+#toolbar ul,
+#toolbar ul li {
+	margin: 0;
+	padding: 0;
 }
+
+
+#toolbar {
+	display: block;
+	margin-bottom: 1em;
+	background: #102b6e;
+	color: white;
+}
+
+#toolbar ul {
+	height:16px;
+	padding:6px;
+}
+	
+#toolbar ul li {
+	margin-right:20px;
+	padding-left:20px;
+	float: left;
+}
+
 
 #toolbar a {
 	color: white;

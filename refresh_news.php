@@ -21,3 +21,9 @@ foreach ($toplevel as $section => $feedurl):
 	ShowOneRSS($feedurl, true);
 endforeach;
 
+foreach ($toplevel as $section => $feedurl):
+	echo $section;
+	ShowInPictures($feedurl, true);
+endforeach;
+
+

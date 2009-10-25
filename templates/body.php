@@ -9,10 +9,6 @@
 </head>
 
 <body>
-
-	<div id="toolbar">
-		<a href="#">Read Later</a>
-	</div>
 		
 	<div id="sections-panel">
 		<ul>
@@ -27,12 +23,8 @@
 			<?php endif;?>
 			</li>
 		<?php endforeach;?>
-			<li><a href="#pictures" id="pictures">In Pictures</a></li>
+			<li><a href="#" id="pictures">In Pictures</a></li>
 		</ul>
-	</div>
-
-	<div id="back-panel">
-		Hello
 	</div>
 
 	<div id="news-panel">	
