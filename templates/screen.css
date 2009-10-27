@@ -253,7 +253,11 @@ ul {
 	width: 600px;
 	padding: 0em;
 	padding-left: 1em;
+}
+
+#reading-panel .article p {
 	font-family: Georgia;
+	
 }
 
 #reading-panel p  {
@@ -412,6 +416,41 @@ ul {
 	background: #066EC9;
 }
 
+
+#uk .section-header,
+#world .section-header,
+#politics .section-header,
+#media .section-header,
+#education .section-header, 
+#society .section-header,
+#science .section-header,
+#technology .section-header {
+	background: #ab1700;
+}
+
+#news-panel #uk a,
+#news-panel #world a,
+#news-panel #politics a,
+#news-panel #media a,
+#news-panel #education a,
+#news-panel #society a,
+#news-panel #science a,
+#news-panel #technology a  {
+	color: #ab1700
+}
+
+#news-panel #uk a:hover,
+#news-panel #world a:hover,
+#news-panel #politics a:hover,
+#news-panel #media a:hover,
+#news-panel #education a:hover,
+#news-panel #society a:hover,
+#news-panel #science a:hover,
+#news-panel #technology a:hover {
+	color: #801100;
+}
+
+
 #environment h2.section-header {
 	background: #4A7801;
 }
@@ -421,4 +460,8 @@ ul {
 h2.section-header {
 	background: #D61D00;
 }
+
+
+
+
 
