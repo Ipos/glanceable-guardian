@@ -80,7 +80,9 @@ ul {
 	width: 49%;
 	height: 150px;
 	font-family: Georgia;
+	padding-top: 0;
 }
+
 
 #news-panel ul li.first a.storyimage {
 	text-align: right;
@@ -92,6 +94,7 @@ ul {
 	width: 25%;
 	opacity: 0.97;
 	float: right;
+	padding-top: 10px;
 }
 
 #news-panel ul li.first img:hover {
@@ -104,7 +107,10 @@ ul {
 	color: #133589;
 	letter-spacing: -0em;
 	font-family: Palatino;
-	margin-top: -10px;
+}
+
+#news-panel ul li.first a.storlink {
+	padding-top: 10px;
 }
 
 #news-panel ul li.bigger {

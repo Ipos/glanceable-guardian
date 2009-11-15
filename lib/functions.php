@@ -31,25 +31,27 @@ function ShowOneRSS($url, $new = false) {
 				// 12 letters per line
 				if ($count == 0) {
 					echo '<li class="first">';
-					echo "<a href=\"parser.php?$item[link]\" class=\"storyimage\"><img src=\"$item[story_image]\" /></a>";
-					echo "\t<a href=\"parser.php?$item[link]\">".widont($item[title])."</a>";
+					if ($item[story_image]) {
+						echo "<a href=\"parser.php?$item[link]\" class=\"storyimage\" rel=\"".$item['dc:identifier']."\"><img src=\"$item[story_image]\" /></a>";
+					}
+					echo "\t<a href=\"parser.php?$item[link]\" class=\"storylink\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";
 					echo "<p>".trundicate(strip_tags($item['description']), 160)."&hellip;</p>";					
 
 				} else if ($count < 3) {
-				// 9 letters per line
+				//	echo $item['dc:identifier'];
 					echo '<li class="bigger">';
-					echo "\t<a href=\"parser.php?$item[link]\">".widont($item[title])."</a>";
+					echo "\t<a href=\"parser.php?$item[link]\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";
 					echo "<p>".trundicate(strip_tags($item['description']), 140)."&hellip;</p>";
 	                
 				} else if ($count > 11) {
 					echo '<li class="hidden">';					
-					echo "\t<a href=\"parser.php?$item[link]\">".widont($item[title])."</a>";
+					echo "\t<a href=\"parser.php?$item[link]\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";
 					echo "<p>".trundicate(strip_tags($item['description']))."&hellip;</p>";					
 					
 				} else {
 					// 12 letters per line
 					echo '<li class="normal">';
-					echo "\t<a href=\"parser.php?$item[link]\">".widont($item[title])."</a>";
+					echo "\t<a href=\"parser.php?$item[link]\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";
 					echo "<p>".trundicate(strip_tags($item['description']))."&hellip;</p>";
 					
 				}

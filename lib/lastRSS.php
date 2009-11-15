@@ -46,7 +46,7 @@ class lastRSS {
 	// Private variables
 	// -------------------------------------------------------------------
 	var $channeltags = array ('title', 'link', 'description', 'language', 'copyright', 'managingEditor', 'webMaster', 'lastBuildDate', 'rating', 'docs');
-	var $itemtags = array('title', 'link', 'description', 'author', 'category', 'comments', 'enclosure', 'guid', 'pubDate', 'source');
+	var $itemtags = array('title', 'link', 'description', 'dc:identifier', 'author', 'category', 'comments', 'enclosure', 'guid', 'pubDate', 'source');
 	var $imagetags = array('title', 'url', 'link', 'width', 'height');
 	var $textinputtags = array('title', 'description', 'name', 'link');
 
@@ -138,7 +138,6 @@ class lastRSS {
 				$rss_content .= fgets($f, 4096);
 			}
 			fclose($f);
-
 			// Parse document encoding
 			$result['encoding'] = $this->my_preg_match("'encoding=[\'\"](.*?)[\'\"]'si", $rss_content);
 			// if document codepage is specified, use it
@@ -160,7 +159,7 @@ class lastRSS {
 						// convert lastBuildDate to specified date format
 						$result['lastBuildDate'] = date($this->date_format, $timestamp);
 			}
-
+		
 			// Parse TEXTINPUT info
 			preg_match("'<textinput(|[^>]*[^/])>(.*?)</textinput>'si", $rss_content, $out_textinfo);
 				// This a little strange regexp means:
@@ -201,7 +200,7 @@ class lastRSS {
 					} else {
 						$result['items'][$i]['story_image'] = $temp; // Set only if not empty	
 					} 
-					
+										
 					$result['items'][$i]['description'] = html_entity_decode($result['items'][$i]['description']);						
 
 					// Strip HTML tags and other bullshit from TITLE

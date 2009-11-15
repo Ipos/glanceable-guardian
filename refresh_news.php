@@ -23,7 +23,7 @@ endforeach;
 
 foreach ($toplevel as $section => $feedurl):
 	echo $section;
-	ShowInPictures($feedurl, true);
+	ShowRSSinPictures($feedurl, true);
 endforeach;
 
 
