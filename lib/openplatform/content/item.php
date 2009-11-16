@@ -51,13 +51,26 @@ class GuardianAPI_item {
 			$this->get_item();
 		}		
 	}
-
+	
+	
 	function get_item() {
 		if ($this->id) {
 			$url = $this->api_url . 'item/' . $this->id . '?api_key=' . $this->api_key . '&format=json';
 			if (GUARDIANAPI_DEBUG) echo "API URL used: " . $url . "<br />";
 
-			$result = json_decode(file_get_contents($url), TRUE); // decode into an associative array
+			// added disk cache
+			$cachetime = 800;
+			$filename = './cache/' . md5($url);
+			
+			if (file_exists($filename) && time() - $cachetime < filemtime($filename)) {
+				$result = json_decode(file_get_contents($filename, TRUE));
+				$result = objectToArray($result);
+				// from cache
+			} else { 				
+				$result = json_decode(file_get_contents($url), TRUE); 
+				file_put_contents($filename, json_encode($result));
+				// from url
+			}			
 
 			$headers = array();
 			if (isset($http_response_header)) {

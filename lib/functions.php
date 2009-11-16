@@ -156,6 +156,19 @@ function get_content_id($url) {
 	
 }
 
+function objectToArray( $object )
+{
+    if( !is_object( $object ) && !is_array( $object ) )
+    {
+        return $object;
+    }
+    if( is_object( $object ) )
+    {
+        $object = get_object_vars( $object );
+    }
+    return array_map( 'objectToArray', $object );
+}
+
 
 function show_contentid_cache() {
 	$db = new SQLiteDatabase("./cache/article-lookup.sqlite"); 
