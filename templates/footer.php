@@ -4,13 +4,15 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	
+	$('body').show();
+	
 	
 	$('#news-panel ul li a').click(function(event){
 
-		var url = $(this).attr('href');
+		var content_id = $(this).attr('rel');
 		$('#reading-panel').show();
 		$('#reading-panel').html('Loading ...');
-		$("#reading-panel").load(url);		
+		$("#reading-panel").load('parser.php?'+content_id);		
 		
 		event.preventDefault();
 
@@ -76,3 +78,4 @@ pageTracker._trackPageview();
 } catch(err) {}</script>
 </body>
 </html>
+

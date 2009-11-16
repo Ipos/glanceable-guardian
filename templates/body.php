@@ -8,7 +8,7 @@
 	
 </head>
 
-<body>
+<body style="display: none">
 		
 	<div id="sections-panel">
 		<ul>

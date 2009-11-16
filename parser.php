@@ -10,9 +10,10 @@ require_once('lib/openplatform/content/tag.php');
 require_once('lib/openplatform/content/tags.php');
 require_once('lib/openplatform/content/item.php');
 
-$url = $_SERVER['QUERY_STRING'];
+$content_id = $_SERVER['QUERY_STRING'];
+
 $item = new GuardianAPI_item();
-$item->id = get_content_id($url);
+$item->id = $content_id;
 $item->get_item();
 
 include('templates/article-view.php');
