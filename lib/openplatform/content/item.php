@@ -64,13 +64,13 @@ class GuardianAPI_item {
 			
 			if (file_exists($filename) && time() - $cachetime < filemtime($filename)) {
 				$result = json_decode(file_get_contents($filename, TRUE));
-				echo "from cache";
+				$result = objectToArray($result);
+				// from cache
 			} else { 				
 				$result = json_decode(file_get_contents($url), TRUE); 
 				file_put_contents($filename, json_encode($result));
-								echo "from url";
-			}
-			
+				// from url
+			}			
 
 			$headers = array();
 			if (isset($http_response_header)) {
