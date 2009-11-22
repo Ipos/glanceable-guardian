@@ -10,8 +10,7 @@ function ShowRSSinPictures($url, $new = false) {
 	
 					if ($item[story_image]) {
 						
-						echo '<img src="image.php?file='.$item[story_image].'" />';
-						echo '<li class="picture" style="background: url('.$item[story_image].') top center no-repeat">';					
+						echo '<li class="picture" style="background: url(image.php?file='.$item[story_image].'&width=350&height=350) top center no-repeat">';					
 						echo "\t<span><a href=\"parser.php?$item[link]\">".widont($item[title])."</a></span>";
 						echo "</li>\n"; 
 					}
