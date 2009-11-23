@@ -34,7 +34,7 @@ function ShowOneRSS($url, $new = false) {
 				if ($count == 0) {
 					echo '<li class="first">';
 					if ($item[story_image]) {
-						echo "<a href=\"parser.php?$item[link]\" class=\"storyimage\" rel=\"".$item['dc:identifier']."\"><img src=\"$item[story_image]\" /></a>";
+						echo "<a href=\"parser.php?$item[link]\" class=\"storyimage\" rel=\"".$item['dc:identifier']."\"><img src=\"image.php?file=$item[story_image]&width=150&height=170\" /></a>";
 					}
 					echo "\t<a href=\"parser.php?$item[link]\" class=\"storylink\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";
 					echo "<p>".trundicate(strip_tags($item['description']), 160)."&hellip;</p>";					
