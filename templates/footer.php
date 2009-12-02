@@ -4,6 +4,8 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	
+	$('.typekit-badge').hide();
+	
 	$('body').show();
 	
 	

@@ -96,10 +96,12 @@ ul {
 }
 
 #news-panel ul li.first img {
-	width: 25%;
+	width: 200px;
 	opacity: 0.97;
 	float: right;
 	padding-top: 10px;
+	margin-left: 15px;
+	margin-bottom: 10px;
 }
 
 #news-panel ul li.first img:hover {

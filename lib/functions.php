@@ -34,27 +34,27 @@ function ShowOneRSS($url, $new = false) {
 				if ($count == 0) {
 					echo '<li class="first">';
 					if ($item[story_image]) {
-						echo "<a href=\"parser.php?$item[link]\" class=\"storyimage\" rel=\"".$item['dc:identifier']."\"><img src=\"image.php?file=$item[story_image]&width=150&height=170\" /></a>";
+						echo "<a href=\"parser.php?$item[link]\" class=\"storyimage\" rel=\"".$item['dc:identifier']."\"><img src=\"image.php?file=$item[story_image]&width=300&height=200&crop=true\"/></a>";
 					}
 					echo "\t<a href=\"parser.php?$item[link]\" class=\"storylink\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";
-					echo "<p>".trundicate(strip_tags($item['description']), 160)."&hellip;</p>";					
+					echo "<p>".trundicate(($item['description']), 160)."&hellip;</p>";					
 
 				} else if ($count < 2) {
 				//	echo $item['dc:identifier'];
 					echo '<li class="bigger">';
 					echo "\t<a href=\"parser.php?$item[link]\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";
-					echo "<p>".trundicate(strip_tags($item['description']), 140)."&hellip;</p>";
+					echo "<p>".trundicate(($item['description']), 200)."&hellip;</p>";
 	                
-				} else if ($count > 11) {
+				} else if ($count > 13) {
 					echo '<li class="hidden">';					
 					echo "\t<a href=\"parser.php?$item[link]\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";
-					echo "<p>".trundicate(strip_tags($item['description']))."&hellip;</p>";					
+					echo "<p>".trundicate($item['description'])."&hellip;</p>";					
 					
 				} else {
 					// 12 letters per line
 					echo '<li class="normal">';
 					echo "\t<a href=\"parser.php?$item[link]\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";
-					echo "<p>".trundicate(strip_tags($item['description']))."&hellip;</p>";
+					echo "<p>".trundicate($item['description'])."&hellip;</p>";
 					
 				}
 				echo "</li>\n"; 
@@ -78,7 +78,8 @@ function slugit($slug) {
 }
 
 function trundicate($what, $limit = 100) {
-	return substr($what, 0, $limit);
+	$text = array ('</p>', '•');
+	return ltrim(substr(strip_tags(str_replace($text, " ", $what)), 0, $limit));
 }
 
 function widont($str = '')
