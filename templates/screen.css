@@ -71,15 +71,20 @@ ul {
 	border-right: 1px dotted #b7b7b7;
 }
 
+
+#news-panel ul li p {
+		font-family: "droid-serif-1","droid-serif-2";
+}
+
 #news-panel ul li a {
 	text-decoration: none;
+	font-family: "droid-serif-1","droid-serif-2";
 }
 
 #news-panel ul li.first {
 	width: 450px;
-	width: 49%;
+	width: 64%;
 	height: 150px;
-	font-family: Georgia;
 	padding-top: 0;
 }
 
@@ -106,7 +111,6 @@ ul {
 	font-size: 28px;
 	color: #133589;
 	letter-spacing: -0em;
-	font-family: Palatino;
 }
 
 #news-panel ul li.first a.storlink {
@@ -114,14 +118,12 @@ ul {
 }
 
 #news-panel ul li.bigger {
-	width: 212px;
-	width: 22%;
+	width: 31%;
 	height: 150px;	
 }
 
 #news-panel ul li.bigger a {
 	font-size: 22px;
-	font-family: Palatino;
 }
 
 #news-panel ul li.hidden {

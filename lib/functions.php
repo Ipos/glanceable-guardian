@@ -39,7 +39,7 @@ function ShowOneRSS($url, $new = false) {
 					echo "\t<a href=\"parser.php?$item[link]\" class=\"storylink\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";
 					echo "<p>".trundicate(strip_tags($item['description']), 160)."&hellip;</p>";					
 
-				} else if ($count < 3) {
+				} else if ($count < 2) {
 				//	echo $item['dc:identifier'];
 					echo '<li class="bigger">';
 					echo "\t<a href=\"parser.php?$item[link]\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";

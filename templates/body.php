@@ -4,6 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
 	<title>glance guardian</title>
+	
+	<script type="text/javascript" src="http://use.typekit.com/uzb1zfd.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
 	<link rel="stylesheet" href="./templates/screen.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	
 </head>
