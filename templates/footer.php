@@ -23,7 +23,6 @@ $(document).ready(function() {
 	
 	
 	$('#sections-panel a').click(function(event) { 
-		console.log($(this).id);
 
 		if ($(this).attr('id') == 'pictures') {
 			

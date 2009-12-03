@@ -30,14 +30,22 @@ function ShowOneRSS($url, $new = false) {
     if ($rs = $rss->get($url, $new)) { 
 			$count = 0;
             foreach ($rs['items'] as $item) { 	
+	
+				if ($item['story_image']) {
+					$excerpt_length = 300;
+				} else {
+					$excerpt_length = 360;
+				}
+				
 				// 12 letters per line
 				if ($count == 0) {
 					echo '<li class="first">';
-					if ($item[story_image]) {
+					if ($item['story_image']) {
 						echo "<a href=\"parser.php?$item[link]\" class=\"storyimage\" rel=\"".$item['dc:identifier']."\"><img src=\"image.php?file=$item[story_image]&width=300&height=200&crop=true\"/></a>";
 					}
 					echo "\t<a href=\"parser.php?$item[link]\" class=\"storylink\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";
-					echo "<p>".trundicate(($item['description']), 160)."&hellip;</p>";					
+					
+					echo "<p>".trundicate(($item['description']), $excerpt_length)."&hellip;</p>";		
 
 				} else if ($count < 2) {
 				//	echo $item['dc:identifier'];
