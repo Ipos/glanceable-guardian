@@ -41,15 +41,19 @@ $(document).ready(function() {
 		
 			$('#sections-panel ul').children().each(function (i) {
 				$(this).removeClass('active');
+				
 			});
 		
 			$('#news-panel').children().each(function (i) {
-				$(this).hide();
+				$(this).addClass('hidden');
 			});
 		
 			var x = $(this)[0].href.split('#');
 			$('#sections-panel .'+x[1]).addClass('active');
-			$('#'+x[1]).show('fast');
+			$('#'+x[1]).addClass('active');
+			$('#'+x[1]).animate({
+			      "height": "toggle", "opacity": "toggle"
+			    }, "slow");
 		
 		
 			event.preventDefault(); 

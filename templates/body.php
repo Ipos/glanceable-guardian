@@ -33,7 +33,7 @@
 
 	<div id="news-panel">	
 		<?php foreach ($news_zones as $zone => $feedurl):?>
-		<div id="<?=slugit($zone)?>">	
+		<div id="<?=slugit($zone)?>" class="news-list">	
 		<h2 class="section-header"><?=$zone;?></h2>		
 			<ul>
 				<?php ShowOneRSS($feedurl); ?>
@@ -42,7 +42,7 @@
 		<?php endforeach;?>	
 	
 		<?php foreach ($toplevel as $section => $feedurl):?>
-		<div id="<?=slugit($section)?>" <?php if ($section == 'News'){?> style="display: block"<?php } ?>>
+		<div id="<?=slugit($section)?>" <?php if ($section == 'News'){?> <?php } ?> class="news-list">
 		<h2 class="section-header"><?=$section;?></h2>		
 			<ul>
 				<?php ShowOneRSS($feedurl); ?>
