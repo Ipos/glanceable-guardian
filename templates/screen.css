@@ -311,66 +311,39 @@ ul {
 
 /* @group Culture Colors */
 
-#news-panel #culture ul li.first:hover p{
-	color: white;
-}
-
 #news-panel #culture ul,	
 #news-panel #culture ul li,
 #news-panel #culture ul li.bigger {
 	border-color: #A7006F;
+}
+	
+
+#news-panel #culture ul li:hover a{
+	color: #7D0053;
 }
 
 #news-panel #culture ul li a {
 	color: #D1008B
 }
 
-#news-panel #culture ul li.first a {
-	color: white
-}
-	
-#news-panel #culture ul li.first {
-	background: #A7006F;
-	color: white;
-	border-color: #A7006F;
+#news-panel #money ul li a {
+	color: #8F1AB6;
 }
 
-#news-panel #culture ul li.first:hover a {
-	color: #FDC2E2;
+#news-panel #life-and-style ul li a {
+	color: #AD532F;
 }
 
-#news-panel #culture ul li.first:hover {
-	background: #7D0053;
-	color: white;
-}
-	
-#news-panel #culture ul li.bigger:hover {
-	background:#DD9DDC;
+#news-panel #travel ul li a {
+	color:#066EC9;
 }
 
-#news-panel #culture ul li:hover a{
-	color: #7D0053;
+#news-panel #environment ul li a {
+	color:#4A7801;
 }
 
-#news-panel #culture ul li:hover {
-	background: #FDC2E2;
-}
-	
-#news-panel #culture ul li:hover p{
-	color: #7D0053;
-}
 
-#news-panel #culture ul li:hover {
-	color: white;
-}
-
-/* @group Sport Colors */
-
-#news-panel #sport ul,	
-#news-panel #sport ul li,
-#news-panel #sport ul li.bigger {
-	border-color: #3a7d00;
-}
+/*Sport Colors */
 
 #news-panel #sport ul li a {
 	color: #3A7D00
@@ -378,18 +351,17 @@ ul {
 	
 #news-panel #sport ul li.first {
 	color: #0D3D00;
-	border-color: #3a7d00;
-}
 
-#sections-panel li.sport.active a {
-
-}
-
-	
+}	
 
 #news-panel #sport ul li:hover a{
 	color: #0d3d00;
 }
+
+#news-panel #comment ul li a {
+	color: #0061A6;	
+}
+
 
 
 
