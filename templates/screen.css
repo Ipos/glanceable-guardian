@@ -15,6 +15,10 @@ h1, h2 {
 	font-weight: normal;
 }
 
+h2.section-header {
+	font-family: "droid-serif-1","droid-serif-2";
+}
+
 a img {
 	border: none;
 }
@@ -47,10 +51,11 @@ ul {
 }
 
 #news-panel .section-header {
-	background: #133589;
-	padding: 5px 15px;
+	border-top: 4px solid #133589;
+	background: white;
+	padding: 5px 10px;
 	margin: 0;
-	color: white;
+	color: #133589;
 }
 
 #news-panel div {
@@ -73,7 +78,7 @@ ul {
 
 
 #news-panel ul li p {
-		font-family: "droid-serif-1","droid-serif-2";
+	font-family: "droid-serif-1","droid-serif-2";
 }
 
 #news-panel ul li a {
@@ -371,31 +376,51 @@ ul {
 	border-bottom: 2px solid #D61D00;
 }
 #comment h2.section-header {
-	background:#0061A6;
+	border-top: 2px solid #0061A6;
+	color: #0061A6;
+	background: white;
 }
 #sport h2.section-header.section-header {
-	background: #008000;
+	border-top: 2px solid #008000;
+	color: #008000;
+	background: white;
 }
 
 #tv h2.section-header,
 #culture h2.section-header {
-	background: #D1008B;
+	border-top: 2px solid #D1008B;
+	color: #D1008B;
+	background: white;
 }
 
 #business h2.section-header {
-	background: #3246AB;
+	border-top: 2px solid #3246AB;
+	color: #3246AB;
+	background: white;
 }
 
 #money h2.section-header {
-	background: #8F1AB6;
+	border-top: 2px solid #8F1AB6;
+	color: #8F1AB6;
+	background: white;
+}
+
+#environment h2.section-header {
+	border-top: 2px solid #4A7801;
+	color: #4A7801;
+	background: white;	
 }
 
 #life-and-style h2.section-header {
-	background: #AD532F;
+	border-top: 2px solid #AD532F;
+	color: #AD532F;
+	background: white;	
 }
 
 #travel h2.section-header {
-	background: #066EC9;
+	border-top: 2px solid #066EC9;
+	color: #066EC9;
+	background: white;
 }
 
 
@@ -407,7 +432,8 @@ ul {
 #society .section-header,
 #science .section-header,
 #technology .section-header {
-	background: #ab1700;
+	border-top: 4px solid #ab1700;
+	color: #ab1700;
 }
 
 #news-panel #uk a,
@@ -433,9 +459,6 @@ ul {
 }
 
 
-#environment h2.section-header {
-	background: #4A7801;
-}
 
 /* News Zones */
 

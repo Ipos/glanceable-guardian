@@ -13,7 +13,8 @@ if (file_exists($filePath)) {
 	// generate and cache
 	$options = array('resizeUp'=> true);
 	$thumb = PhpThumbFactory::create($fileName, $options);	
-	if ($crop == true) {
+	// 
+	if ($crop == 'true') {
 		$thumb->adaptiveResize($height,$width)->cropFromCenter(230,150)->save($filePath)->show();
 	} else {
 		$thumb->adaptiveResize($height,$width)->save($filePath)->show();
