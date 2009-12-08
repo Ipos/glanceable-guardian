@@ -254,25 +254,50 @@ ul {
 #reading-panel {
 	position: absolute;
 	left: 150px;
-	top: 85px;
+	top: 0px;
 	display: none;
 	z-index: 99;
 	background: white;
 	border: none;
 	padding-top: 0;
 	right: 0;
-	height: 620px;
+
 }
 
 #reading-panel .article {
 	width: 600px;
+	height: auto;
 	padding: 0em;
 	padding-left: 1em;
 }
 
-#reading-panel .article p {
-	font-family: Georgia;
-	
+#reading-panel h1,
+#reading-panel h2,
+#reading-panel p {
+	font-family: "droid-serif-1","droid-serif-2", Georgia;
+}
+
+#reading-panel h1 {
+	font-size: 36px;
+}
+
+#reading-panel h2 {
+	font-size: 22px;
+	color: #666;
+}
+
+#reading-panel .byline {
+	text-transform: uppercase;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+#reading-panel .article-body img {
+	float: right;
+	margin-left: 20px;
+	margin-bottom: 20px;
 }
 
 #reading-panel p  {
