@@ -1,13 +1,15 @@
 <?php 
 	if(stripos($_SERVER["HTTP_HOST"], "glanceableguardian.nfshost.com") !== FALSE){
 		$status = "live";
-		error_reporting(0);
+	    ini_set( 'display_errors', 0 );
+		
 	}elseif(stripos($_SERVER["HTTP_HOST"], "glanceableguardianstaging.nfshost.com") !== FALSE){
 		$status = "staging";
-		error_reporting(E_ERROR | E_WARNING | E_PARSE);		
+	    error_reporting( E_ERROR | E_USER_ERROR );
+	    ini_set( 'display_errors', 1 );
 	}else{
-		$status = "development";
-		error_reporting(E_ERROR | E_WARNING | E_PARSE);		
+	    error_reporting( E_ERROR | E_USER_ERROR );
+	    ini_set( 'display_errors', 1 );
 	}
 
 	include('./lib/lastRSS.php');
