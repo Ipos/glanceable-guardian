@@ -12,6 +12,7 @@
 </div>
 <div class="article">
 		
+		
 	<h1><?=widont($item->headline);?></h1>
 	<h2 class="trail"><?=widont($item->trail_text)?></h2>
 	
@@ -23,7 +24,7 @@
 	 		<img src="<?= $item->trail_image_url ?>" />
 		<?php endif;?>
 	
-		<p><?=$item->type_specific['body'] ?></p>
+		<p><?= htmlButTags($item->type_specific['body']) ?></p>
 	
 	</div>
 	

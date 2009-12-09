@@ -102,6 +102,15 @@ function widont($str = '')
 }
 
 
+function htmlButTags($str) { 
+	$str = htmlspecialchars($str);
+	$str = str_replace("&lt;","<",$str);
+	$str = str_replace("&gt;",">",$str);
+	$str = str_replace("&quot;",'"',$str);
+	$str = str_replace("&amp;",'&',$str);
+	return $str;
+}
+
 function objectToArray( $object )
 {
     if( !is_object( $object ) && !is_array( $object ) )

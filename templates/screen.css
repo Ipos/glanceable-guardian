@@ -300,8 +300,9 @@ ul {
 	margin-bottom: 20px;
 }
 
-#reading-panel p  {
+#reading-panel .article p  {
 	margin-bottom: 1em;
+	line-height: 18px;
 }
 
 #toolbar ul,
