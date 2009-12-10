@@ -1,6 +1,4 @@
 <?php
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
-
 define("GUARDIANAPI_DEBUG", false);
 
 require_once('config.php');

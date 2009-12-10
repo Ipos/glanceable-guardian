@@ -8,7 +8,7 @@
 	    error_reporting( E_ERROR | E_USER_ERROR );
 	    ini_set( 'display_errors', 1 );
 	}else{
-	    error_reporting( E_ERROR | E_USER_ERROR );
+	    error_reporting( E_ERROR | E_USER_ERROR | E_WARNING );
 	    ini_set( 'display_errors', 1 );
 	}
 

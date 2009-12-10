@@ -5,75 +5,73 @@ function ShowRSSinPictures($url, $new = false) {
 
     if ($rs = $rss->get($url, $new)) { 
 			$count = 0;
+			$output = 0;
+			
             foreach ($rs['items'] as $item) { 	
 	
-	
-					if ($item[story_image]) {
-						
-						echo '<li class="picture" style="background: url(image.php?file='.$item[story_image].'&width=350&height=350&crop=false) top center no-repeat">';					
-						echo "\t<span><a href=\"parser.php?$item[link]\">".widont($item[title])."</a></span>";
-						echo "</li>\n"; 
-					}
-            } 
+				if ($item[story_image]) {						
+					$output .= '<li class="picture" style="background: url(image.php?file='.$item[story_image].'&width=350&height=350&crop=false) top center no-repeat">';					
+					$output .= "\t<span><a href=\"parser.php?=".$item['dc:identifier']."\" class=\"storylink\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</span></a>";
+					$output .= "</li>\n";
+				}
 
-            if ($rs['items_count'] <= 0) { echo "<li>Sorry, no items found in the RSS file :-(</li>"; } 
+            } 
+		
+		if ($rs['items_count'] <= 0) { echo "<li>Sorry, no items found in the RSS file :-(</li>"; } 
     } 
     else { 
         echo "Sorry: It's not possible to reach RSS file $url\n<br />"; 
         // you will probably hide this message in a live version 
     }
-	
+
+	return $output;
+
 }
 
 function ShowOneRSS($url, $new = false) { 	
     global $rss; 
     if ($rs = $rss->get($url, $new)) { 
 			$count = 0;
+			$output = '';
+
             foreach ($rs['items'] as $item) { 	
-	
-				if ($item['story_image']) {
-					$excerpt_length = 300;
-				} else {
-					$excerpt_length = 360;
-				}
+				$excerpt_length = 150;
 				
-				// 12 letters per line
-				if ($count == 0) {
-					echo '<li class="first">';
-					if ($item['story_image']) {
-						echo "<a href=\"parser.php?$item[link]\" class=\"storyimage\" rel=\"".$item['dc:identifier']."\"><img src=\"image.php?file=$item[story_image]&width=300&height=200&crop=true\"/></a>";
+				if ($item['dc:identifier']):
+					
+					if ($count == 0) {
+						$output .= '<li class="first">';
+				
+						if ($item['story_image']) {
+							$excerpt_length = 300;
+							$output .= "<a href=\"parser.php?=".$item['dc:identifier']."\" class=\"storyimage\" rel=\"".$item['dc:identifier']."\"><img src=\"image.php?file=$item[story_image]&width=300&height=200&crop=true\"/></a>";
+						}
+					
+					} elseif ($count < 2) {
+						$output .= '<li class="bigger">';
+						$excerpt_length = 200;
+						
+					} elseif ($count > 13) {
+						$output .= '<li class="hidden">';
+					} else {
+						$output .= '<li class="normal">';
 					}
-					echo "\t<a href=\"parser.php?$item[link]\" class=\"storylink\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";
-					
-					echo "<p>".trundicate(($item['description']), $excerpt_length)."&hellip;</p>";		
+									
+					$output .= "\t<a href=\"parser.php?=".$item['dc:identifier']."\" class=\"storylink\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";
 
-				} else if ($count < 2) {
-				//	echo $item['dc:identifier'];
-					echo '<li class="bigger">';
-					echo "\t<a href=\"parser.php?$item[link]\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";
-					echo "<p>".trundicate(($item['description']), 200)."&hellip;</p>";
-	                
-				} else if ($count > 13) {
-					echo '<li class="hidden">';					
-					echo "\t<a href=\"parser.php?$item[link]\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";
-					echo "<p>".trundicate($item['description'])."&hellip;</p>";					
-					
-				} else {
-					// 12 letters per line
-					echo '<li class="normal">';
-					echo "\t<a href=\"parser.php?$item[link]\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";
-					echo "<p>".trundicate($item['description'])."&hellip;</p>";
-					
-				}
-				echo "</li>\n"; 
-				$count++;	
+					$output .= "<p>".trundicate(($item['description']), $excerpt_length)."&hellip;</p>";
+				
+					$output .= "</li>\n";
+				
+				endif;
+				$count++;					
             } 
-
+			
+			return $output;
             if ($rs['items_count'] <= 0) { echo "<li>Sorry, no items found in the RSS file :-(</li>"; } 
     } 
     else { 
         echo "Sorry: It's not possible to reach RSS file $url\n<br />"; 
-        // you will probably hide this message in a live version 
     } 
 } 
 

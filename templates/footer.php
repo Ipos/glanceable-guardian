@@ -8,9 +8,10 @@ $(document).ready(function() {
 	
 	$('body').show();
 	
-	
 	$('#news-panel ul li a').click(function(event){
-
+		
+		$('#inpictures').hide();
+		
 		var content_id = $(this).attr('rel');
 		$('#reading-panel').show();
 		$('#reading-panel').html('Loading ...');

@@ -36,7 +36,7 @@
 		<div id="<?=slugit($zone)?>">	
 		<h2 class="section-header"><?=$zone;?></h2>		
 			<ul>
-				<?php ShowOneRSS($feedurl); ?>
+				<?php echo ShowOneRSS($feedurl); ?>
 			</ul>
 		</div>	
 		<?php endforeach;?>	
@@ -45,7 +45,7 @@
 		<div id="<?=slugit($section)?>" <?php if ($section == 'News'){?> style="display: block"<?php } ?>>
 		<h2 class="section-header"><?=$section;?></h2>		
 			<ul>
-				<?php ShowOneRSS($feedurl); ?>
+				<?php echo ShowOneRSS($feedurl); ?>
 			</ul>
 		</div>	
 		<?php endforeach;?>
@@ -54,7 +54,7 @@
 			<h2 class="section-header">News in Pictures</h2>
 			<ul>
 				<?php foreach ($news_zones as $zone => $feedurl):?>
-					<?php ShowRSSinPictures($feedurl)?>
+					<?php echo ShowRSSinPictures($feedurl)?>
 				<?php endforeach;?>
 			</ul>
 		</div>
