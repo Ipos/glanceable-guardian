@@ -3,7 +3,7 @@ $fileName = (isset($_GET['file'])) ? urldecode($_GET['file']) : null;
 $width = (isset($_GET['width'])) ? urldecode($_GET['width']) : null;
 $height = (isset($_GET['height'])) ? urldecode($_GET['height']) : null;
 $crop = (isset($_GET['crop'])) ? urldecode($_GET['crop']) : null;
-$filePath = './cache/imgcache_'.md5($fileName).$width.$height.$crop;
+$filePath = './cache/imgcache_'.md5($fileName).$width.$height.$crop.".cache";
 
 if (file_exists($filePath)) {
 	// send 

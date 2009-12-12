@@ -5,13 +5,13 @@ function ShowRSSinPictures($url, $new = false) {
 
     if ($rs = $rss->get($url, $new)) { 
 			$count = 0;
-			$output = 0;
+			$output = '';
 			
             foreach ($rs['items'] as $item) { 	
 	
 				if ($item[story_image]) {						
 					$output .= '<li class="picture" style="background: url(image.php?file='.$item[story_image].'&width=350&height=350&crop=false) top center no-repeat">';					
-					$output .= "\t<span><a href=\"parser.php?=".$item['dc:identifier']."\" class=\"storylink\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</span></a>";
+					$output .= "\t<span><a href=\"parser.php?#".$item['dc:identifier']."\" class=\"storylink\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</span></a>";
 					$output .= "</li>\n";
 				}
 
@@ -44,7 +44,9 @@ function ShowOneRSS($url, $new = false) {
 				
 						if ($item['story_image']) {
 							$excerpt_length = 300;
-							$output .= "<a href=\"parser.php?=".$item['dc:identifier']."\" class=\"storyimage\" rel=\"".$item['dc:identifier']."\"><img src=\"image.php?file=$item[story_image]&width=300&height=200&crop=true\"/></a>";
+							$output .= "<a href=\"parser.php?#".$item['dc:identifier']."\" class=\"storyimage\" rel=\"".$item['dc:identifier']."\"><img src=\"image.php?file=$item[story_image]&width=300&height=200&crop=true\"/></a>";
+						} else {
+							$excerpt_length = 500;
 						}
 					
 					} elseif ($count < 2) {
@@ -57,7 +59,7 @@ function ShowOneRSS($url, $new = false) {
 						$output .= '<li class="normal">';
 					}
 									
-					$output .= "\t<a href=\"parser.php?=".$item['dc:identifier']."\" class=\"storylink\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";
+					$output .= "\t<a href=\"parser.php?#".$item['dc:identifier']."\" class=\"storylink\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</a>";
 
 					$output .= "<p>".trundicate(($item['description']), $excerpt_length)."&hellip;</p>";
 				

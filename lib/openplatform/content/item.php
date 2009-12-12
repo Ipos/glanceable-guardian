@@ -60,7 +60,7 @@ class GuardianAPI_item {
 
 			// added disk cache
 			$cachetime = 800;
-			$filename = './cache/' . md5($url);
+			$filename = './cache/' . md5($url) . '.cache';
 			
 			if (file_exists($filename) && time() - $cachetime < filemtime($filename)) {
 				$result = json_decode(file_get_contents($filename, TRUE));
