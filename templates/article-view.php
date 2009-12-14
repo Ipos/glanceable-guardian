@@ -11,8 +11,7 @@
 	</ul>
 </div>
 <div class="article">
-		
-		
+				
 	<h1><?=widont($item->headline);?></h1>
 	<h2 class="trail"><?=widont($item->trail_text)?></h2>
 	

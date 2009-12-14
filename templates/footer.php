@@ -65,6 +65,10 @@ $(document).ready(function() {
 		$('#reading-panel, #sections-panel, #toolbar').hide();
 	});
 	
+	$('#article-back').live('click', function(event){
+		$('#article-view').hide();
+	});
+	
 
 });
 </script>

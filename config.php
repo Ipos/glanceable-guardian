@@ -1,7 +1,10 @@
 <?php
 
+// cache
+define('CACHE_DIR', './cache');
+
 // Set cache dir and cache time limit
-$rss->cache_dir = './cache'; 
+$rss->cache_dir = CACHE_DIR;
 $rss->cache_time = 1200;
 $rss->stripHTML = true;
 $rss->items_limit = 15;
@@ -10,6 +13,7 @@ $rss->items_limit = 15;
 define("GUARDIANAPI_KEY", "");
 define("GUARDIANAPI_URL", "http://api.guardianapis.com/content/");
 define("GUARDIANAPI_DEBUG", true);
+define('GUARDIAN_CACHE_TIME',8600);
 
 
 $toplevel = array (
@@ -19,10 +23,10 @@ $toplevel = array (
 	'Culture' => 'http://feeds.guardian.co.uk/theguardian/culture/rss',
 	'Business' => 'http://www.guardian.co.uk/business/rss',
 	'Money' => 'http://feeds.guardian.co.uk/theguardian/money/rss',
-	'Life and Style' => 'http://feeds.guardian.co.uk/theguardian/lifeandstyle/rss',
+	'Life &amp; Style' => 'http://feeds.guardian.co.uk/theguardian/lifeandstyle/rss',
 	'Travel' => 'http://feeds.guardian.co.uk/theguardian/travel/rss',
 	'Environment' => 'http://feeds.guardian.co.uk/theguardian/environment/rss',
-	'TV and Radio' => 'http://www.guardian.co.uk/tv-and-radio/rss'
+	'TV &amp; Radio' => 'http://www.guardian.co.uk/tv-and-radio/rss'
 );
 
 $news_zones = array (

@@ -7,6 +7,10 @@
 	font-size: 14px;
 }
 
+body {
+	background: #c9c9c9;
+}
+
 h1, h2 {
 	font-size: 40px;
 	margin-bottom: 0.3em;
@@ -16,7 +20,7 @@ h1, h2 {
 }
 
 h2.section-header {
-	font-family: "droid-serif-1","droid-serif-2";
+	font-family: "droid-serif-1","droid-serif-2", Georgia
 }
 
 a img {
@@ -34,8 +38,9 @@ ul {
 	float: left;
 	position: absolute;
 	top: 0;
-	left: 150px;
+	left: 115px;
 	min-width: 940px;
+	background: #f6f6f6;
 }
 
 #news-panel div {
@@ -52,7 +57,7 @@ ul {
 
 #news-panel .section-header {
 	border-top: 4px solid #133589;
-	background: white;
+	background: #f6f6f6;
 	padding: 5px 10px;
 	margin: 0;
 	color: #133589;
@@ -118,11 +123,13 @@ ul {
 	font-size: 28px;
 	color: #133589;
 	letter-spacing: -0em;
+	text-shadow: 1px 1px 1px white;	
 }
 
 #news-panel ul li.first a.storlink {
 	padding-top: 10px;
 }
+
 
 #news-panel ul li.bigger {
 	width: 31%;
@@ -131,6 +138,7 @@ ul {
 
 #news-panel ul li.bigger a {
 	font-size: 22px;
+	text-shadow: 1px 1px 1px white;		
 }
 
 #news-panel ul li.hidden {
@@ -149,6 +157,8 @@ ul {
 	margin-bottom: 0.5em;
 	color: #133589;
 	font-size: 15.5px;
+	text-shadow: 1px 1px 1px white;		
+	-webkit-transition: color .1s linear;			
 }
 
 /* Sidebar */
@@ -156,11 +166,15 @@ ul {
 
 
 #sections-panel {
-	width: 150px;
+	width: 114px;
+	border-right: 1px solid #a6a6a6;			
 	float: left;
-	margin-top: 50px;
-	padding-left: 10px;
-
+	padding-top: 50px;
+	font-family: "droid-serif-1","droid-serif-2";
+	background: #b9b9b9 url('images/sections-background.gif') top left repeat-x;
+	top: 0;
+	bottom: 0;
+	position: absolute;
 }
 
 #sections-panel a:active {
@@ -168,35 +182,48 @@ ul {
 }
 
 #sections-panel ul li {
-	width: 110px;
 	margin: 0;
 	padding: 0;
-	text-align: right;
+	text-align: left;
 }
 
 #sections-panel ul li a {
 	text-decoration: none;
 	display: block;
-	color: #999;
+	color: #5f5f5f;
 	font-weight: bold;
-	font-family: Palatino;
-	width: 120px;	
-	margin: 3px 0;	
 	margin: 0;
+	margin-bottom: 5px;
 	padding: 3px 0;	
-	font-size: 18px;
-	padding-left: 5px;
+	padding-left: 18px;
+	font-size: 14px;
+	width: 100px;
+	text-shadow: 1px 1px 1px rgba(32,32,32,0);	
 }
+
 
 #sections-panel ul li a:hover {
-	color: #555;
+	color: white;
+	background: url('images/hover-background.png') bottom no-repeat;
+	text-shadow: 1px 1px 1px rgba(32,32,32,0.5);		
 }
 
-#sections-panel li.active a {
-	width: 120px;
+#sections-panel ul li a:active {
+	position: relative;
+	top: -1px;
+	background: url('images/active-down-background.png') bottom no-repeat;
+	
+	text-shadow: 1px 1px 1px rgba(32,32,32,0.5);		
+}
+
+#sections-panel li.active a,
+#sections-panel li.active a:hover {
 	color: #555;	
 	z-index: 99;
 	position: relative;
+	color: white;
+	background: url('images/active-background.png') bottom no-repeat;
+	text-shadow: 1px 1px 1px rgba(32,32,32,0.5);
 }
 
 
@@ -253,7 +280,7 @@ ul {
 
 #reading-panel {
 	position: absolute;
-	left: 150px;
+	left: 0px;
 	top: 0px;
 	display: none;
 	z-index: 99;
@@ -261,7 +288,7 @@ ul {
 	border: none;
 	padding-top: 0;
 	right: 0;
-
+	min-height: 900px;
 }
 
 #reading-panel .article {
@@ -269,6 +296,7 @@ ul {
 	height: auto;
 	padding: 0em;
 	padding-left: 1em;
+	margin: 0 auto;
 }
 
 #reading-panel h1,
@@ -404,49 +432,41 @@ ul {
 #comment h2.section-header {
 	border-top: 2px solid #0061A6;
 	color: #0061A6;
-	background: white;
 }
 #sport h2.section-header.section-header {
 	border-top: 2px solid #008000;
 	color: #008000;
-	background: white;
 }
 
 #tv h2.section-header,
 #culture h2.section-header {
 	border-top: 2px solid #D1008B;
 	color: #D1008B;
-	background: white;
 }
 
 #business h2.section-header {
 	border-top: 2px solid #3246AB;
 	color: #3246AB;
-	background: white;
 }
 
 #money h2.section-header {
 	border-top: 2px solid #8F1AB6;
 	color: #8F1AB6;
-	background: white;
 }
 
 #environment h2.section-header {
 	border-top: 2px solid #4A7801;
 	color: #4A7801;
-	background: white;	
 }
 
 #life-and-style h2.section-header {
 	border-top: 2px solid #AD532F;
 	color: #AD532F;
-	background: white;	
 }
 
 #travel h2.section-header {
 	border-top: 2px solid #066EC9;
 	color: #066EC9;
-	background: white;
 }
 
 
