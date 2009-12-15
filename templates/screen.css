@@ -33,6 +33,22 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 	background: rgba(0,0,0,0.9);
 }
 
+#loading-panel {
+	position: absolute;
+	background: white url('images/loading.gif') 65px 40px no-repeat;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;	
+	width: 150px;
+	height: 80px;
+	z-index: 150;
+	margin: 0 auto;
+	left: 50%;
+	top: 50%;
+	margin-top: -40px;
+	margin-left: -75px;
+}
+
+
 body, html {
 	background: #b9b9b9;
 }
@@ -321,20 +337,22 @@ ul {
 }
 
 #reading-panel .article {
-	top: 50px;
-	bottom: 10px;
+	top: 10px;
+	bottom: 20px;
 	z-index: 99;
 	border: none;
 	position: absolute;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;	
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-right-radius: 5px;
 	background: white;
 	overflow-y: scroll;	
 	width: 800px;
 	padding-left: 2em;
 	padding-right: 3em;
 	padding-top: 0.5em;
-	padding-bottom: 0.5em;
+	padding-bottom:1em;
 }
 
 #reading-panel h1,
@@ -381,16 +399,16 @@ ul {
 #toolbar {
 	display: block;
 	position: fixed;
-	top: 0;
+	bottom: 0;
 	width: 870px;
 	margin: 0 auto;
 	background: #222;
 	color: white;
 	z-index: 120;
-	-moz-border-radius-bottomleft: 5px;
-	-webkit-border-bottom-left-radius: 5px;
-	-moz-border-radius-bottomright: 5px;
-	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-left-radius: 5px;
 
 }
 
