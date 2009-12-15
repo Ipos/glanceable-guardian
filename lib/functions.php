@@ -11,7 +11,7 @@ function ShowRSSinPictures($url, $new = false) {
 	
 				if ($item[story_image]) {						
 					$output .= '<li class="picture" style="background: url(image.php?file='.$item[story_image].'&width=350&height=350&crop=false) top center no-repeat">';					
-					$output .= "\t<span><a href=\"parser.php?#".$item['dc:identifier']."\" class=\"storylink\" rel=\"".$item['dc:identifier']."\">".widont($item[title])."</span></a>";
+					$output .= "\t<a href=\"parser.php?#".$item['dc:identifier']."\" class=\"storylink\" rel=\"".$item['dc:identifier']."\"><span>".widont($item[title])."</span></a>";
 					$output .= "</li>\n";
 				}
 

@@ -10,21 +10,20 @@
 		<li><a href="<?= $item->web_url?>">Link</a></li>
 	</ul>
 </div>
-<div class="article">
-				
-	<h1><?=widont($item->headline);?></h1>
-	<h2 class="trail"><?=widont($item->trail_text)?></h2>
+	<div class="article">
+		<div class="wrapper">			
+		<h1><?=widont($item->headline);?></h1>
+		<h2 class="trail"><?=widont($item->trail_text)?></h2>
 	
-	<p class="byline"><?= $item->byline?></p>
+		<p class="byline"><?= $item->byline?></p>
 	
-	<div class="article-body">
+		<div class="article-body">
 
-		<?php if ($item->trail_image_url):?>
-	 		<img src="<?= $item->trail_image_url ?>" />
-		<?php endif;?>
+			<?php if ($item->trail_image_url):?>
+		 		<img src="<?= $item->trail_image_url ?>" />
+			<?php endif;?>
 	
-		<p><?= htmlButTags($item->type_specific['body']) ?></p>
-	
+			<p><?= htmlButTags($item->type_specific['body']) ?></p>
+		</div>
 	</div>
-	
 </div>
