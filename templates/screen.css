@@ -22,7 +22,7 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 
 
 #blackout {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	top: 0;
 	left: 0;
@@ -34,7 +34,7 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 }
 
 #loading-panel {
-	position: absolute;
+	position: fixed;
 	background: white url('images/loading.gif') 65px 40px no-repeat;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;	
@@ -208,7 +208,8 @@ ul {
 
 
 #sections-panel {
-	width: 114px;
+	width: 130px;
+	height: 100%;
 	border-right: 1px solid #a6a6a6;			
 	float: left;
 	padding-top: 50px;
@@ -238,11 +239,11 @@ ul {
 	color: #5f5f5f;
 	font-weight: bold;
 	margin-bottom: 2px;
-	padding: 3px 0;	
-	margin-left: 3px;
-	padding-left: 18px;
+	padding-top: 2px;
+	padding-left: 11px;
 	font-size: 14px;
-	width: 90px;
+	width: 100px;
+	height: 20px;
 	text-shadow: 1px 1px 1px rgba(32,32,32,0);	
 }
 
@@ -256,7 +257,6 @@ ul {
 #sections-panel ul li a:active {
 	position: relative;
 	top: -1px;
-	background: url('images/active-down-background.png') bottom no-repeat;
 	text-shadow: 1px 1px 1px rgba(32,32,32,0.5);		
 }
 
@@ -304,7 +304,7 @@ ul {
 #reader {
 	position: absolute;
 	top: 0;
-	left: 120px;
+	left: 130px;
 	display: none;
 }
 
@@ -341,7 +341,7 @@ ul {
 	bottom: 20px;
 	z-index: 99;
 	border: none;
-	position: absolute;
+	position: fixed;
 	-moz-border-radius-topleft: 5px;
 	-webkit-border-top-left-radius: 5px;
 	-moz-border-radius-topright: 5px;
