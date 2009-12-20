@@ -14,7 +14,7 @@
 	
 </head>
 
-<body style="display: none" class="flow">
+<body style="" class="flow">
 
 	<div id="blackout" style="display: none"></div>
 	<div id="loading-panel" style="display: none"></div>

@@ -6,7 +6,6 @@ $(document).ready(function() {
 	
 	$('.typekit-badge').hide();
 	
-	$('body').show();
 	
 	$('#news-panel ul li a').click(function(event){
 		
@@ -18,7 +17,6 @@ $(document).ready(function() {
 		$("#reading-panel").load('parser.php?'+content_id,
 			function(){
 				$('#loading-panel').fadeOut('fast');	
-				
 				$('#reading-panel').fadeIn('fast');					
 				$('body').removeClass('flow').addClass('noflow');
 	 	});
@@ -36,9 +34,7 @@ $(document).ready(function() {
 
 		if ($(this).attr('id') == 'pictures') {
 			
-			
 			$('#reading-panel').hide();
-			
 			
 			$('#news-panel').children().each(function (i) {
 				$(this).hide();
@@ -50,7 +46,6 @@ $(document).ready(function() {
 			
 			
 			$('#reading-panel').hide();
-		
 			$('#sections-panel ul').children().each(function (i) {
 				$(this).removeClass('active');
 			});
@@ -61,7 +56,7 @@ $(document).ready(function() {
 		
 			var x = $(this)[0].href.split('#');
 			$('#sections-panel .'+x[1]).addClass('active');
-			$('#'+x[1]).show('fast');
+			$('#'+x[1]).fadeIn('fast');
 					
 			event.preventDefault(); 
 		}
